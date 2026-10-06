@@ -1,0 +1,11 @@
+{
+  "entity.rotpalcoraddon.example_stand": "SBH",
+  "stand.rotpalcoraddon.example_stand": "Supermasive Black Hole",
+  "action.rotpalcoraddon.example_stand_punch": "Punch",
+  "action.rotpalcoraddon.example_stand_heavy_punch": "Heavy Punch",
+  "action.rotpalcoraddon.example_stand_finisher_punch": "Finisher Punch",
+  "action.rotpalcoraddon.example_stand_barrage": "Punch Barrage",
+  "action.rotpalcoraddon.example_stand_block": "Block",
+  "action.rotpalcoraddon.example_stand_throw_pickaxe": "Throw Pickaxe",
+  "entity.rotpalcoraddon.example_pickaxe": "Pickaxe"
+}

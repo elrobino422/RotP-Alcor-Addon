@@ -83,13 +83,13 @@ public class InitStands {
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
-                            .power(20)
+                            .power(18)
                             .speed(20)
-                            .range(50, 100)
-                            .durability(20)
+                            .range(80, 120)
+                            .durability(14)
                             .precision(20)
                             .build())
-                    .addSummonShout(InitSounds.EXAMPLE_STAND_SUMMON_VOICELINE)
+                    .addSummonShout(InitSounds.SBH_VOICE_SUMMON)
                     .addOst(InitSounds.EXAMPLE_STAND_OST)
                     .build(),
                     
