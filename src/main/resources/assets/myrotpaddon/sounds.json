@@ -1,3 +1,7 @@
 {
-  
+  "sbh_stand_summon_voiceline": {
+    "sounds": [
+      "myrotpaddon:sbh_stand_summon_voiceline"
+    ]
+  }
 }
