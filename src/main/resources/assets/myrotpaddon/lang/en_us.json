@@ -1,6 +1,6 @@
 {
-  "entity.myrotpaddon.example_stand": "Example Stand",
-  "stand.myrotpaddon.example_stand": "Example Stand",
+  "entity.myrotpaddon.example_stand": "SBH",
+  "stand.myrotpaddon.example_stand": "Supermasive Black Hole",
   "action.myrotpaddon.example_stand_punch": "Punch",
   "action.myrotpaddon.example_stand_heavy_punch": "Heavy Punch",
   "action.myrotpaddon.example_stand_finisher_punch": "Finisher Punch",
