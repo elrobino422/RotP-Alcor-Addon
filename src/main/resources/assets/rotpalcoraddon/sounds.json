@@ -1,8 +1,7 @@
 {
-  "sbh_summon": {
-    "subtitle": "rotpalcoraddon.sbh.voice.summon",
+  "sbh_stand_summon_voiceline": {
     "sounds": [
-      "rotpalcoraddon/sbh_stand_summon_voicelin"
+      "myrotpaddon:sbh_stand_summon_voiceline"
     ]
   }
 }
