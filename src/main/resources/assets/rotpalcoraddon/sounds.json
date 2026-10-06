@@ -2,7 +2,7 @@
   "sbh_summon": {
     "subtitle": "rotpalcoraddon.sbh.voice.summon",
     "sounds": [
-      "rotpalcoraddon/sbh_stand_summon_voiceline"
+      "rotpalcoraddon/sbh_stand_summon_voicelin"
     ]
   }
 }
