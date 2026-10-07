@@ -16,7 +16,7 @@ public class InitSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(
             ForgeRegistries.SOUND_EVENTS, AddonMain.MOD_ID);
 
-    public static final RegistryObject<SoundEvent> EXAMPLE_STAND_SUMMON_VOICELINE = SOUNDS.register(
+    public static final RegistryObject<SoundEvent> SBH_VOICE_SUMMON = SOUNDS.register(
             "sbh_stand_summon_voiceline",
             () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_stand_summon_voiceline")));
 
