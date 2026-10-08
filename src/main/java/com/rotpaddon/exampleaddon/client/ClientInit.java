@@ -18,7 +18,7 @@ public class ClientInit {
     @SubscribeEvent
     public static void onFMLClientSetup(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(
-                InitStands.STAND_SBH.getEntityType(), ExampleStandRenderer::new);
+                InitStands.STAND_SBH.getEntityType(), SBHStandRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.EXAMPLE_PICKAXE.get(), manager -> new ExamplePickaxeRenderer(manager));
     }
