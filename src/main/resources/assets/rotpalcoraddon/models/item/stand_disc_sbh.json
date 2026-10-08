@@ -1,0 +1,6 @@
+{
+  "parent": "jojo:item/stand_disc",
+  "textures": {
+    "layer0": "rotpalcoraddon:power/sbh"
+  }
+}
