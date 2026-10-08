@@ -14,6 +14,6 @@ public class SBHStandRenderer extends StandEntityRenderer<SBHStandEntity, StandE
     public SBHStandRenderer(EntityRendererManager renderManager) {
         super(renderManager,
                 StandModelRegistry.registerModel(new ResourceLocation(AddonMain.MOD_ID, "sbh"), SBHStandModel::new),
-                new ResourceLocation(AddonMain.MOD_ID, "textures/entity/stand/sbh.png"), 0);
+                new ResourceLocation(AddonMain.MOD_ID, "textures/entity/stand/example_stand.png"), 0);
     }
 }
