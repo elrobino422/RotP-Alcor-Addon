@@ -2,7 +2,7 @@ package com.rotpaddon.exampleaddon.client;
 
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.client.render.ExamplePickaxeRenderer;
-import com.rotpaddon.exampleaddon.client.render.ExampleStandRenderer;
+import com.rotpaddon.exampleaddon.client.render.SBHStandRenderer;
 import com.rotpaddon.exampleaddon.init.InitEntities;
 import com.rotpaddon.exampleaddon.init.InitStands;
 
@@ -18,7 +18,7 @@ public class ClientInit {
     @SubscribeEvent
     public static void onFMLClientSetup(FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(
-                InitStands.STAND_EXAMPLE_STAND.getEntityType(), ExampleStandRenderer::new);
+                InitStands.STAND_SBH.getEntityType(), ExampleStandRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.EXAMPLE_PICKAXE.get(), manager -> new ExamplePickaxeRenderer(manager));
     }
