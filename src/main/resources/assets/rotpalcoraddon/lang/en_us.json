@@ -1,11 +1,11 @@
 {
-  "entity.rotpalcoraddon.example_stand": "SBH",
-  "stand.rotpalcoraddon.example_stand": "Supermasive Black Hole",
-  "action.rotpalcoraddon.example_stand_punch": "Punch",
-  "action.rotpalcoraddon.example_stand_heavy_punch": "Heavy Punch",
-  "action.rotpalcoraddon.example_stand_finisher_punch": "Finisher Punch",
-  "action.rotpalcoraddon.example_stand_barrage": "Punch Barrage",
-  "action.rotpalcoraddon.example_stand_block": "Block",
-  "action.rotpalcoraddon.example_stand_throw_pickaxe": "Throw Pickaxe",
+  "entity.rotpalcoraddon.sbh": "SBH",
+  "stand.rotpalcoraddon.sbh": "Super Massive Black Hole",
+  "action.rotpalcoraddon.sbh_punch": "Punch",
+  "action.rotpalcoraddon.sbh_heavy_punch": "Heavy Punch",
+  "action.rotpalcoraddon.sbh_finisher_punch": "Finisher Punch",
+  "action.rotpalcoraddon.sbh_barrage": "Punch Barrage",
+  "action.rotpalcoraddon.sbh_block": "Block",
+  "action.rotpalcoraddon.sbh_throw_pickaxe": "Throw Pickaxe",
   "entity.rotpalcoraddon.example_pickaxe": "Pickaxe"
 }
