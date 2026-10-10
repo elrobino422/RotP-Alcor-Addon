@@ -1,3 +1,4 @@
+
 package com.rotpaddon.exampleaddon.client.render;
 
 import com.github.standobyte.jojo.client.render.entity.model.stand.StandEntityModel;
@@ -12,8 +13,16 @@ import net.minecraft.util.ResourceLocation;
 public class SBHStandRenderer extends StandEntityRenderer<SBHStandEntity, StandEntityModel<SBHStandEntity>> {
 
     public SBHStandRenderer(EntityRendererManager renderManager) {
-        super(renderManager,
-                StandModelRegistry.registerModel(new ResourceLocation(AddonMain.MOD_ID, "sbh"), SBHStandModel::new),
-                new ResourceLocation(AddonMain.MOD_ID, "textures/entity/stand/example_stand.png"), 0);
+        super(
+                renderManager,
+                StandModelRegistry.registerModel(
+                        new ResourceLocation(AddonMain.MOD_ID, "sbh"),
+                        SBHStandModel::new
+                ),
+                new ResourceLocation(AddonMain.MOD_ID, "textures/entity/stand/example_stand.png"),
+                0
+        );
+
+        System.out.println("[SBH DEBUG] Renderer constructor called!");
     }
 }
