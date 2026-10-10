@@ -34,4 +34,26 @@ public class InitSounds {
 
     public static final OstSoundList SBH_OST = new OstSoundList(
             new ResourceLocation(AddonMain.MOD_ID, "sbh_stand_ost"), SOUNDS);
+
+
+    public static final RegistryObject<SoundEvent> SBH_TRACK_1 =
+            SOUNDS.register("sbh_track_1",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_track_1")));
+
+    public static final RegistryObject<SoundEvent> SBH_TRACK_2 =
+            SOUNDS.register("sbh_track_2",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_track_2")));
+
+    public static final RegistryObject<SoundEvent> SBH_TRACK_3 =
+            SOUNDS.register("sbh_track_3",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_track_3")));
+
+    public static final RegistryObject<SoundEvent> SBH_TRACK_4 =
+            SOUNDS.register("sbh_track_4",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_track_4")));
+
 }

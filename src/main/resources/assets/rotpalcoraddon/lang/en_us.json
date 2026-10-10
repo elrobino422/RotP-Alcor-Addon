@@ -7,5 +7,10 @@
   "action.rotpalcoraddon.sbh_barrage": "Punch Barrage",
   "action.rotpalcoraddon.sbh_block": "Block",
   "action.rotpalcoraddon.sbh_throw_pickaxe": "Throw Pickaxe",
-  "entity.rotpalcoraddon.example_pickaxe": "Pickaxe"
+  "entity.rotpalcoraddon.example_pickaxe": "Pickaxe",
+  "rotpalcoraddon.sbh_resolve_walkman1.name": "SBH - Resolve",
+  "rotpalcoraddon.sbh_walkman2.name": "SBH - Track 2",
+  "rotpalcoraddon.sbh_walkman3.name": "SBH - Track 3",
+  "rotpalcoraddon.sbh_walkman4.name": "SBH - Track 4"
+
 }

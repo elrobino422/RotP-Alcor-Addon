@@ -1,7 +1,76 @@
+
 {
   "sbh_stand_summon_voiceline": {
     "sounds": [
       "rotpalcoraddon:sbh_stand_summon_voiceline"
+    ]
+  },
+  "sbh_stand_ost_30": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_60": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_75": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_90": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_120": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_full": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      }
+    ]
+  },
+  "sbh_stand_ost_cassette": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:sbh_resolve_walkman1",
+        "stream": true
+      },
+      {
+        "name": "rotpalcoraddon:sbh_walkman2",
+        "stream": true
+      },
+      {
+        "name": "rotpalcoraddon:sbh_walkman3",
+        "stream": true
+      },
+      {
+        "name": "rotpalcoraddon:sbh_walkman4",
+        "stream": true
+      }
     ]
   }
 }
