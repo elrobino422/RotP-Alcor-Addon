@@ -17,6 +17,7 @@ public class ClientInit {
     
     @SubscribeEvent
     public static void onFMLClientSetup(FMLClientSetupEvent event) {
+        AddonMain.LOGGER.info("SBH CHECK: CLIENT SETUP EXECUTED");
         RenderingRegistry.registerEntityRenderingHandler(
                 InitStands.STAND_SBH.getEntityType(), SBHStandRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(
