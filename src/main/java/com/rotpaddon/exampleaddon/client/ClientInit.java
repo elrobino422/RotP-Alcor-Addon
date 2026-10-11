@@ -12,6 +12,8 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
+import com.rotpaddon.exampleaddon.client.render.SBHVoidOrbRenderer;
+
 @EventBusSubscriber(modid = AddonMain.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientInit {
     
@@ -22,5 +24,8 @@ public class ClientInit {
                 InitStands.STAND_SBH.getEntityType(), SBHStandRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.EXAMPLE_PICKAXE.get(), manager -> new ExamplePickaxeRenderer(manager));
+        RenderingRegistry.registerEntityRenderingHandler(
+                InitEntities.SBH_VOID_ORB.get(),
+                SBHVoidOrbRenderer::new);
     }
 }

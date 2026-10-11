@@ -16,6 +16,7 @@ import com.github.standobyte.jojo.power.impl.stand.type.StandType;
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
+import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -62,6 +63,14 @@ public class InitStands {
                     .staminaCost(75)
                     .partsRequired(StandPart.ARMS)));
 
+    public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
+            ACTIONS.register("sbh_void_orb",
+                    () -> new SBHVoidOrb(new StandEntityAction.Builder()
+                            .holdToFire(20, true)
+                            .standRecoveryTicks(20)
+                            .staminaCost(75)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final EntityStandRegistryObject<EntityStandType<StandStats>, StandEntityType<SBHStandEntity>> STAND_SBH =
             new EntityStandRegistryObject<>("sbh",
                     STANDS,
@@ -74,7 +83,8 @@ public class InitStands {
                             )
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
-                            SBH_THROW_PICKAXE.get()
+                            SBH_THROW_PICKAXE.get(),
+                            SBH_VOID_ORB.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
