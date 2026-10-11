@@ -66,6 +66,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
             ACTIONS.register("sbh_void_orb",
                     () -> new SBHVoidOrb(new StandEntityAction.Builder()
+                            .standPose(SBHStandThrowPickaxe.PICKAXE_THROW_ANIM)
                             .holdToFire(20, true)
                             .standRecoveryTicks(20)
                             .staminaCost(75)
