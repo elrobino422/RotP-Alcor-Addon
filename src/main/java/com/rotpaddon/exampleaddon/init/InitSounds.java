@@ -56,4 +56,12 @@ public class InitSounds {
                     () -> new SoundEvent(new ResourceLocation(
                             AddonMain.MOD_ID, "sbh_track_4")));
 
+    public static final RegistryObject<SoundEvent> SBH_VOID_ORB =
+            SOUNDS.register("sbh_void_orb",
+                    () -> new SoundEvent(
+                            new ResourceLocation(
+                                    AddonMain.MOD_ID,
+                                    "sbh_void_orb"
+                            )));
+
 }

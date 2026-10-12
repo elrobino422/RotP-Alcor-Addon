@@ -68,6 +68,7 @@ public class InitStands {
                     () -> new SBHVoidOrb(new StandEntityAction.Builder()
                             .holdToFire(20, true)
                             .standRecoveryTicks(20)
+                            .standSound(InitSounds.SBH_VOID_ORB)
                             .staminaCost(75)
                             .partsRequired(StandPart.ARMS)));
 

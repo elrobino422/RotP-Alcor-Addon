@@ -72,5 +72,10 @@
         "stream": true
       }
     ]
+  },
+  "sbh_void_orb": {
+    "sounds": [
+      "rotpalcoraddon:sbh_void_orb"
+    ]
   }
 }
