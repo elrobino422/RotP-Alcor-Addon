@@ -112,6 +112,16 @@
     "sounds": [
       "rotpalcoraddon:sbh_void_step_voiceline"
     ]
+  },
+  "sbh_gravity_crush": {
+    "sounds": [
+      "rotpalcoraddon:sbh_gravity_crush"
+    ]
+  },
+  "sbh_gravity_crush_voice": {
+    "sounds": [
+      "rotpalcoraddon:sbh_gravity_crush_voice"
+    ]
   }
 
 }
