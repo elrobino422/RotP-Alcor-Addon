@@ -38,7 +38,7 @@ public class InitEntities {
                             .<SBHGravityWellCoreEntity>of(SBHGravityWellCoreEntity::new,
                                     EntityClassification.MISC)
                             .sized(1.0F, 1.0F)
-                            .clientTrackingRange(96)
+                            .clientTrackingRange(8)
                             .updateInterval(1)
                             .build(AddonMain.MOD_ID + ":sbh_gravity_well_core"));
 };
