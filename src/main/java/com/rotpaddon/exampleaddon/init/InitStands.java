@@ -35,10 +35,12 @@ public class InitStands {
 
     public static final RegistryObject<StandEntityAction> SBH_PUNCH = ACTIONS.register("sbh_punch",
             () -> new StandEntityLightAttack(new StandEntityLightAttack.Builder()
+                    .standSound(InitSounds.SBH_PUNCH_VOICE)
                     .punchSound(InitSounds.SBH_PUNCH_LIGHT)));
 
     public static final RegistryObject<StandEntityAction> SBH_BARRAGE = ACTIONS.register("sbh_barrage",
             () -> new StandEntityMeleeBarrage(new StandEntityMeleeBarrage.Builder()
+                    .standSound(InitSounds.SBH_BARRAGE_VOICE)
                     .barrageHitSound(InitSounds.SBH_PUNCH_BARRAGE)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_FINISHER_PUNCH = ACTIONS.register("sbh_finisher_punch",
@@ -106,6 +108,7 @@ public class InitStands {
                             .standRecoveryTicks(10)
                             .cooldown(160)
                             .standSound(InitSounds.SBH_VOID_STEP)
+                            .standSound(InitSounds.SBH_VOID_STEP_VOICE)
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
 

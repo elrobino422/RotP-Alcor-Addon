@@ -80,29 +80,32 @@ public class InitSounds {
                                     "sbh_void_orb_voice"
                             )));
 
-    public static final RegistryObject<SoundEvent> SBH_PUNCH = SOUNDS.register(
-            "sbh_punch",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_punch")));
 
-    public static final RegistryObject<SoundEvent> SBH_BARRAGE = SOUNDS.register(
-            "sbh_barrage",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_barrage")));
+    public static final RegistryObject<SoundEvent> SBH_PUNCH_VOICE =
+            SOUNDS.register("sbh_punch",
+                    () -> new SoundEvent(
+                            new ResourceLocation(AddonMain.MOD_ID, "sbh_punch")));
 
-    public static final RegistryObject<SoundEvent> SBH_HEAVY_PUNCH = SOUNDS.register(
-            "sbh_heavy_punch",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_heavy_punch")));
+    public static final RegistryObject<SoundEvent> SBH_BARRAGE_VOICE =
+            SOUNDS.register("sbh_barrage",
+                    () -> new SoundEvent(
+                            new ResourceLocation(AddonMain.MOD_ID, "sbh_barrage")));
 
-    public static final RegistryObject<SoundEvent> SBH_FINISHER = SOUNDS.register(
-            "sbh_finisher",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_finisher")));
+    public static final RegistryObject<SoundEvent> SBH_HEAVY_PUNCH_VOICE =
+            SOUNDS.register("sbh_heavy_punch",
+                    () -> new SoundEvent(
+                            new ResourceLocation(AddonMain.MOD_ID, "sbh_heavy_punch")));
 
-    public static final RegistryObject<SoundEvent> SBH_VOID_ORB_VOICE = SOUNDS.register(
-            "sbh_void_orb_voice",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_void_orb_voice")));
+    public static final RegistryObject<SoundEvent> SBH_FINISHER_VOICE =
+            SOUNDS.register("sbh_finisher",
+                    () -> new SoundEvent(
+                            new ResourceLocation(AddonMain.MOD_ID, "sbh_finisher")));
 
-    public static final RegistryObject<SoundEvent> SBH_VOID_STEP_VOICELINE = SOUNDS.register(
-            "sbh_void_step_voiceline",
-            () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_void_step_voiceline")));
+    public static final RegistryObject<SoundEvent> SBH_VOID_STEP_VOICE =
+            SOUNDS.register("sbh_void_step_voiceline",
+                    () -> new SoundEvent(
+                            new ResourceLocation(AddonMain.MOD_ID, "sbh_void_step_voiceline")));
+
 
 
 }
