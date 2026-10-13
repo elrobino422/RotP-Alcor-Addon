@@ -112,4 +112,14 @@ public class InitSounds {
 
 
 
+    public static final RegistryObject<SoundEvent> SBH_GRAVITY_CRUSH =
+            SOUNDS.register("sbh_gravity_crush",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_gravity_crush")));
+
+    public static final RegistryObject<SoundEvent> SBH_GRAVITY_CRUSH_VOICE =
+            SOUNDS.register("sbh_gravity_crush_voice",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_gravity_crush_voice")));
+
 }

@@ -18,6 +18,8 @@ import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
+import com.rotpaddon.exampleaddon.action.SBHGravityCrush;
+import com.rotpaddon.exampleaddon.action.SBHGravityWell;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 
@@ -38,38 +40,34 @@ public class InitStands {
 
     public static final RegistryObject<StandEntityAction> SBH_PUNCH = ACTIONS.register("sbh_punch",
             () -> new StandEntityLightAttack(new StandEntityLightAttack.Builder()
+                    .cooldown(4, 0)
                     .standSound(InitSounds.SBH_PUNCH_VOICE)
                     .punchSound(InitSounds.SBH_PUNCH_LIGHT)));
 
     public static final RegistryObject<StandEntityAction> SBH_BARRAGE = ACTIONS.register("sbh_barrage",
             () -> new StandEntityMeleeBarrage(new StandEntityMeleeBarrage.Builder()
+                    .cooldown(20, 0)
                     .standSound(InitSounds.SBH_BARRAGE_VOICE)
                     .barrageHitSound(InitSounds.SBH_PUNCH_BARRAGE)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_FINISHER_PUNCH = ACTIONS.register("sbh_finisher_punch",
             () -> new StandEntityHeavyAttack(new StandEntityHeavyAttack.Builder()
+                    .cooldown(40, 0)
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
+                    .standSound(InitSounds.SBH_HEAVY_PUNCH_VOICE)
                     .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_HEAVY_PUNCH = ACTIONS.register("sbh_heavy_punch",
             () -> new StandEntityHeavyAttack(new StandEntityHeavyAttack.Builder()
+                    .cooldown(25, 0)
                     .shiftVariationOf(SBH_PUNCH).shiftVariationOf(SBH_BARRAGE)
                     .setFinisherVariation(SBH_FINISHER_PUNCH)
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
+                    .standSound(InitSounds.SBH_FINISHER_VOICE)
                     .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityAction> SBH_BLOCK = ACTIONS.register("sbh_block",
             () -> new StandEntityBlock());
-
-    public static final RegistryObject<StandEntityAction> SBH_THROW_PICKAXE = ACTIONS.register("sbh_throw_pickaxe",
-            () -> new SBHStandThrowPickaxe(new StandEntityAction.Builder()
-                    .standPose(SBHStandThrowPickaxe.PICKAXE_THROW_ANIM)
-                    .holdToFire(20, true)
-                    .standRecoveryTicks(20)
-                    .standSound(InitSounds.SBH_THROW_PICKAXE)
-                    .staminaCost(75)
-                    .partsRequired(StandPart.ARMS)));
-
 
 
     public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
@@ -84,7 +82,7 @@ public class InitStands {
                             .standWindupDuration(12)
 
                             // Cooldown After 3 seconds
-                            .cooldown(60)
+                            .cooldown(60, 0)
 
                             // Animation finishes during recovery
                             .standRecoveryTicks(8)
@@ -105,11 +103,38 @@ public class InitStands {
 
 
 
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
+            ACTIONS.register("sbh_gravity_crush",
+                    () -> new SBHGravityCrush(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(10)
+                            .standPerformDuration(80)
+                            .standRecoveryTicks(10)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_GRAVITY_CRUSH_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_GRAVITY_CRUSH)
+                            .cooldown(280, 0)
+                            .staminaCost(100)
+                            .partsRequired(StandPart.ARMS)));
+
+    // Gravity Well persists after the cast, so SBH can combo with other moves.
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
+            ACTIONS.register("sbh_gravity_well",
+                    () -> new SBHGravityWell(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(12)
+                            .standPerformDuration(1)
+                            .standRecoveryTicks(10)
+                            .cooldown(300, 0)
+                            .staminaCost(125)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
                             .standRecoveryTicks(10)
-                            .cooldown(160)
+                            .cooldown(160, 0)
                             .standSound(InitSounds.SBH_VOID_STEP)
                             .standSound(InitSounds.SBH_VOID_STEP_VOICE)
                             .staminaCost(100)
@@ -130,9 +155,10 @@ public class InitStands {
                             )
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
-                            SBH_THROW_PICKAXE.get(),
                             SBH_VOID_ORB.get(),
-                            SBH_VOID_STEP.get()
+                            SBH_VOID_STEP.get(),
+                            SBH_GRAVITY_CRUSH.get(),
+                            SBH_GRAVITY_WELL.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)

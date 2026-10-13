@@ -3,10 +3,15 @@ package com.rotpaddon.exampleaddon.client;
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.client.render.ExamplePickaxeRenderer;
 import com.rotpaddon.exampleaddon.client.render.SBHStandRenderer;
+import com.rotpaddon.exampleaddon.client.render.SBHGravityWellCoreRenderer;
+import com.rotpaddon.exampleaddon.client.particle.SBHGravityWellParticle;
 import com.rotpaddon.exampleaddon.init.InitEntities;
+import com.rotpaddon.exampleaddon.init.InitParticles;
 import com.rotpaddon.exampleaddon.init.InitStands;
 
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -27,5 +32,15 @@ public class ClientInit {
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.SBH_VOID_ORB.get(),
                 SBHVoidOrbRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(
+                InitEntities.SBH_GRAVITY_WELL_CORE.get(),
+                SBHGravityWellCoreRenderer::new);
+    }
+    @SubscribeEvent
+    public static void registerGravityWellParticles(ParticleFactoryRegisterEvent event) {
+        Minecraft.getInstance().particleEngine.register(
+                InitParticles.GRAVITY_WELL_SPARK.get(),
+                SBHGravityWellParticle.Factory::new);
     }
 }
+
