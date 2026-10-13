@@ -19,6 +19,7 @@ import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
 
+
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 
@@ -64,21 +65,50 @@ public class InitStands {
                     .staminaCost(75)
                     .partsRequired(StandPart.ARMS)));
 
+
+
     public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
             ACTIONS.register("sbh_void_orb",
                     () -> new SBHVoidOrb(new StandEntityAction.Builder()
-                            .holdToFire(20, true)
-                            .standRecoveryTicks(20)
-                            .standSound(InitSounds.SBH_VOID_ORB)
+                            .standPose(SBHVoidOrb.VOID_ORB_POSE)
+
+                            // SBH moves in front of the player
+                            .standOffsetFromUser(0, 1.5)
+
+                            // Projectile fires after 0.6 seconds
+                            .standWindupDuration(12)
+
+                            // Cooldown After 3 seconds
+                            .cooldown(60)
+
+                            // Animation finishes during recovery
+                            .standRecoveryTicks(8)
+
+                            // Voice begins during preparation
+                            .standSound(
+                                    StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_VOID_ORB_VOICE)
+
+                            // Existing projectile launch sound
+                            .standSound(
+                                    StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_VOID_ORB)
+
                             .staminaCost(75)
                             .partsRequired(StandPart.ARMS)));
+
+
+
 
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
                             .standRecoveryTicks(10)
+                            .cooldown(160)
+                            .standSound(InitSounds.SBH_VOID_STEP)
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
+
 
     public static final EntityStandRegistryObject<EntityStandType<StandStats>, StandEntityType<SBHStandEntity>> STAND_SBH =
             new EntityStandRegistryObject<>("sbh",

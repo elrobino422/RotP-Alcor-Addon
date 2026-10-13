@@ -77,5 +77,46 @@
     "sounds": [
       "rotpalcoraddon:sbh_void_orb"
     ]
+  },
+  "sbh_void_step": {
+    "sounds": [
+      "rotpalcoraddon:sbh_void_step"
+    ]
+  },
+  "sbh_void_orb_voice": {
+    "sounds": [
+      "rotpalcoraddon:sbh_void_orb_voice"
+    ]
+  },
+  "sbh_punch": {
+    "sounds": [
+      "rotpalcoraddon:sbh_punch"
+    ]
+  },
+  "sbh_barrage": {
+    "sounds": [
+      "rotpalcoraddon:sbh_barrage"
+    ]
+  },
+  "sbh_heavy_punch": {
+    "sounds": [
+      "rotpalcoraddon:sbh_heavy_punch"
+    ]
+  },
+  "sbh_finisher": {
+    "sounds": [
+      "rotpalcoraddon:sbh_finisher"
+    ]
+  },
+  "sbh_void_orb_voice": {
+    "sounds": [
+      "rotpalcoraddon:sbh_void_orb_voice"
+    ]
+  },
+  "sbh_void_step_voiceline": {
+    "sounds": [
+      "rotpalcoraddon:sbh_void_step_voiceline"
+    ]
   }
+
 }
