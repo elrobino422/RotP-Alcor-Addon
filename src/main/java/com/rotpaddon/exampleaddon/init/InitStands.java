@@ -18,6 +18,7 @@ import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
+import com.rotpaddon.exampleaddon.action.SBHGravityCrush;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 
@@ -105,6 +106,16 @@ public class InitStands {
 
 
 
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
+            ACTIONS.register("sbh_gravity_crush",
+                    () -> new SBHGravityCrush(new StandEntityAction.Builder()
+                            .standWindupDuration(10)
+                            .standPerformDuration(80)
+                            .standRecoveryTicks(10)
+                            .cooldown(280)
+                            .staminaCost(100)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
@@ -132,7 +143,8 @@ public class InitStands {
                             SBH_BLOCK.get(),
                             SBH_THROW_PICKAXE.get(),
                             SBH_VOID_ORB.get(),
-                            SBH_VOID_STEP.get()
+                            SBH_VOID_STEP.get(),
+                            SBH_GRAVITY_CRUSH.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
