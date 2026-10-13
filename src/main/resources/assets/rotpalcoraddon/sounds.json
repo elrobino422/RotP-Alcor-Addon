@@ -108,11 +108,6 @@
       "rotpalcoraddon:sbh_finisher"
     ]
   },
-  "sbh_void_orb_voice": {
-    "sounds": [
-      "rotpalcoraddon:sbh_void_orb_voice"
-    ]
-  },
   "sbh_void_step_voiceline": {
     "sounds": [
       "rotpalcoraddon:sbh_void_step_voiceline"

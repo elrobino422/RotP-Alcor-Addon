@@ -86,20 +86,24 @@ public class InitSounds {
                     () -> new SoundEvent(
                             new ResourceLocation(AddonMain.MOD_ID, "sbh_punch")));
 
+
     public static final RegistryObject<SoundEvent> SBH_BARRAGE_VOICE =
             SOUNDS.register("sbh_barrage",
                     () -> new SoundEvent(
                             new ResourceLocation(AddonMain.MOD_ID, "sbh_barrage")));
+
 
     public static final RegistryObject<SoundEvent> SBH_HEAVY_PUNCH_VOICE =
             SOUNDS.register("sbh_heavy_punch",
                     () -> new SoundEvent(
                             new ResourceLocation(AddonMain.MOD_ID, "sbh_heavy_punch")));
 
+
     public static final RegistryObject<SoundEvent> SBH_FINISHER_VOICE =
             SOUNDS.register("sbh_finisher",
                     () -> new SoundEvent(
                             new ResourceLocation(AddonMain.MOD_ID, "sbh_finisher")));
+
 
     public static final RegistryObject<SoundEvent> SBH_VOID_STEP_VOICE =
             SOUNDS.register("sbh_void_step_voiceline",
