@@ -1,6 +1,7 @@
 
 {
   "entity.rotpalcoraddon.sbh": "SBH",
+  "entity.rotpalcoraddon.sbh_gravity_well_core": "Gravity Well Core",
   "stand.rotpalcoraddon.sbh": "Super Massive Black Hole",
 
   "action.rotpalcoraddon.sbh_punch": "Punch",
