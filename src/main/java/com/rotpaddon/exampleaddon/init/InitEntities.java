@@ -2,6 +2,7 @@ package com.rotpaddon.exampleaddon.init;
 
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.entity.ExamplePickaxeEntity;
+import com.rotpaddon.exampleaddon.entity.SBHGravityWellCoreEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -29,4 +30,15 @@ public class InitEntities {
                                     EntityClassification.MISC)
                             .sized(0.6F, 0.6F)
                             .build(AddonMain.MOD_ID + ":sbh_void_orb"));
+
+    // Non-colliding world-visible singularity that runs Gravity Well's physics.
+    public static final RegistryObject<EntityType<SBHGravityWellCoreEntity>> SBH_GRAVITY_WELL_CORE =
+            ENTITIES.register("sbh_gravity_well_core",
+                    () -> EntityType.Builder
+                            .<SBHGravityWellCoreEntity>of(SBHGravityWellCoreEntity::new,
+                                    EntityClassification.MISC)
+                            .sized(1.0F, 1.0F)
+                            .clientTrackingRange(96)
+                            .updateInterval(1)
+                            .build(AddonMain.MOD_ID + ":sbh_gravity_well_core"));
 };
