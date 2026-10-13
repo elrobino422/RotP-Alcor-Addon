@@ -40,22 +40,26 @@ public class InitStands {
 
     public static final RegistryObject<StandEntityAction> SBH_PUNCH = ACTIONS.register("sbh_punch",
             () -> new StandEntityLightAttack(new StandEntityLightAttack.Builder()
+                    .cooldown(4, 0)
                     .standSound(InitSounds.SBH_PUNCH_VOICE)
                     .punchSound(InitSounds.SBH_PUNCH_LIGHT)));
 
     public static final RegistryObject<StandEntityAction> SBH_BARRAGE = ACTIONS.register("sbh_barrage",
             () -> new StandEntityMeleeBarrage(new StandEntityMeleeBarrage.Builder()
+                    .cooldown(20, 0)
                     .standSound(InitSounds.SBH_BARRAGE_VOICE)
                     .barrageHitSound(InitSounds.SBH_PUNCH_BARRAGE)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_FINISHER_PUNCH = ACTIONS.register("sbh_finisher_punch",
             () -> new StandEntityHeavyAttack(new StandEntityHeavyAttack.Builder()
+                    .cooldown(40, 0)
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
                     .standSound(InitSounds.SBH_HEAVY_PUNCH_VOICE)
                     .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_HEAVY_PUNCH = ACTIONS.register("sbh_heavy_punch",
             () -> new StandEntityHeavyAttack(new StandEntityHeavyAttack.Builder()
+                    .cooldown(25, 0)
                     .shiftVariationOf(SBH_PUNCH).shiftVariationOf(SBH_BARRAGE)
                     .setFinisherVariation(SBH_FINISHER_PUNCH)
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
@@ -78,7 +82,7 @@ public class InitStands {
                             .standWindupDuration(12)
 
                             // Cooldown After 3 seconds
-                            .cooldown(60)
+                            .cooldown(60, 0)
 
                             // Animation finishes during recovery
                             .standRecoveryTicks(8)
@@ -110,7 +114,7 @@ public class InitStands {
                                     InitSounds.SBH_GRAVITY_CRUSH_VOICE)
                             .standSound(StandEntityAction.Phase.PERFORM,
                                     InitSounds.SBH_GRAVITY_CRUSH)
-                            .cooldown(280)
+                            .cooldown(280, 0)
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
 
@@ -122,7 +126,7 @@ public class InitStands {
                             .standWindupDuration(12)
                             .standPerformDuration(1)
                             .standRecoveryTicks(10)
-                            .cooldown(300)
+                            .cooldown(300, 0)
                             .staminaCost(125)
                             .partsRequired(StandPart.ARMS)));
 
@@ -130,7 +134,7 @@ public class InitStands {
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
                             .standRecoveryTicks(10)
-                            .cooldown(160)
+                            .cooldown(160, 0)
                             .standSound(InitSounds.SBH_VOID_STEP)
                             .standSound(InitSounds.SBH_VOID_STEP_VOICE)
                             .staminaCost(100)
