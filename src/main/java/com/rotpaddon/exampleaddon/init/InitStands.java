@@ -50,6 +50,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityHeavyAttack> SBH_FINISHER_PUNCH = ACTIONS.register("sbh_finisher_punch",
             () -> new StandEntityHeavyAttack(new StandEntityHeavyAttack.Builder()
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
+                    .standSound(InitSounds.SBH_HEAVY_PUNCH_VOICE)
                     .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityHeavyAttack> SBH_HEAVY_PUNCH = ACTIONS.register("sbh_heavy_punch",
@@ -57,20 +58,11 @@ public class InitStands {
                     .shiftVariationOf(SBH_PUNCH).shiftVariationOf(SBH_BARRAGE)
                     .setFinisherVariation(SBH_FINISHER_PUNCH)
                     .punchSound(InitSounds.SBH_PUNCH_HEAVY)
+                    .standSound(InitSounds.SBH_FINISHER_VOICE)
                     .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityAction> SBH_BLOCK = ACTIONS.register("sbh_block",
             () -> new StandEntityBlock());
-
-    public static final RegistryObject<StandEntityAction> SBH_THROW_PICKAXE = ACTIONS.register("sbh_throw_pickaxe",
-            () -> new SBHStandThrowPickaxe(new StandEntityAction.Builder()
-                    .standPose(SBHStandThrowPickaxe.PICKAXE_THROW_ANIM)
-                    .holdToFire(20, true)
-                    .standRecoveryTicks(20)
-                    .standSound(InitSounds.SBH_THROW_PICKAXE)
-                    .staminaCost(75)
-                    .partsRequired(StandPart.ARMS)));
-
 
 
     public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
@@ -146,7 +138,6 @@ public class InitStands {
                             )
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
-                            SBH_THROW_PICKAXE.get(),
                             SBH_VOID_ORB.get(),
                             SBH_VOID_STEP.get(),
                             SBH_GRAVITY_CRUSH.get()
