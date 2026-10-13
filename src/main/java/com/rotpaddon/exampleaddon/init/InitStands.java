@@ -113,6 +113,10 @@ public class InitStands {
                             .standWindupDuration(10)
                             .standPerformDuration(80)
                             .standRecoveryTicks(10)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_GRAVITY_CRUSH_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_GRAVITY_CRUSH)
                             .cooldown(280)
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
