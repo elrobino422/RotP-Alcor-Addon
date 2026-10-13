@@ -17,6 +17,7 @@ import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
+import com.rotpaddon.exampleaddon.action.SBHVoidStep;
 
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -72,6 +73,13 @@ public class InitStands {
                             .staminaCost(75)
                             .partsRequired(StandPart.ARMS)));
 
+    public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
+            ACTIONS.register("sbh_void_step",
+                    () -> new SBHVoidStep(new StandEntityAction.Builder()
+                            .standRecoveryTicks(10)
+                            .staminaCost(100)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final EntityStandRegistryObject<EntityStandType<StandStats>, StandEntityType<SBHStandEntity>> STAND_SBH =
             new EntityStandRegistryObject<>("sbh",
                     STANDS,
@@ -85,7 +93,8 @@ public class InitStands {
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
                             SBH_THROW_PICKAXE.get(),
-                            SBH_VOID_ORB.get()
+                            SBH_VOID_ORB.get(),
+                            SBH_VOID_STEP.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
