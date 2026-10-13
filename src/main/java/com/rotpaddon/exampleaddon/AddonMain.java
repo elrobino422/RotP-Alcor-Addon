@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.rotpaddon.exampleaddon.init.InitEntities;
+import com.rotpaddon.exampleaddon.init.InitParticles;
 import com.rotpaddon.exampleaddon.init.InitSounds;
 import com.rotpaddon.exampleaddon.init.InitStands;
 
@@ -27,6 +28,7 @@ public class AddonMain {
         // A DeferredRegister needs to be created for each type of objects that need to be registered in the game 
         // (see ForgeRegistries or JojoCustomRegistries)
         InitEntities.ENTITIES.register(modEventBus);
+        InitParticles.PARTICLES.register(modEventBus);
         InitSounds.SOUNDS.register(modEventBus);
         InitStands.ACTIONS.register(modEventBus);
         InitStands.STANDS.register(modEventBus);
