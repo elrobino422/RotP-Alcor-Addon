@@ -24,7 +24,6 @@ public class SBHGravityWellParticle extends SpriteTexturedParticle {
         this.sprites = sprites;
         this.lifetime = 14 + this.random.nextInt(10);
         this.gravity = 0.0F;
-        this.friction = 0.94F;
         this.hasPhysics = false;
         this.quadSize = 0.18F + this.random.nextFloat() * 0.23F;
         this.alpha = 0.95F;
