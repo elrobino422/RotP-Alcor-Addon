@@ -109,6 +109,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
             ACTIONS.register("sbh_gravity_crush",
                     () -> new SBHGravityCrush(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
                             .standWindupDuration(10)
                             .standPerformDuration(80)
                             .standRecoveryTicks(10)
