@@ -18,6 +18,9 @@ import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
+import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.util.text.Color;
+
 
 
 import net.minecraftforge.fml.RegistryObject;
@@ -118,7 +121,9 @@ public class InitStands {
                     STANDS,
                     () -> new EntityStandType.Builder<StandStats>()
                     .color(0xA600FF)
-                    .storyPartName(ModStandsInit.PART_3_NAME)
+                    .storyPartName(new TranslationTextComponent("story_part.rotpalcoraddon.alcor")
+                            .withStyle(style -> style.withColor(Color.fromRgb(0xB3D8E5)))
+                    )
                     .leftClickHotbar(
                             SBH_PUNCH.get(),
                             SBH_BARRAGE.get()
@@ -133,7 +138,7 @@ public class InitStands {
                             .tier(6)
                             .power(18)
                             .speed(20)
-                            .range(80, 120)
+                            .range(20, 30)
                             .durability(14)
                             .precision(20)
                             .build())

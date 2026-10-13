@@ -56,12 +56,20 @@ public class SBHVoidOrb extends StandEntityAction {
 
         Vector3d targetPos = blockHit.getLocation();
 
-        // Spawn the projectile using RotP's normal system
-        SBHVoidOrbEntity orb = new SBHVoidOrbEntity(standEntity, world);
 
-        // Correct direction from projectile to crosshair target
+        // The player owns the projectile, not the Stand.
+        SBHVoidOrbEntity orb = new SBHVoidOrbEntity(user, world);
+
+        // Launch from SBH's position.
         Vector3d spawnPos = standEntity.getEyePosition(1.0F);
         Vector3d direction = targetPos.subtract(spawnPos).normalize();
+
+        // Place the projectile slightly ahead of SBH.
+        orb.setPos(
+                spawnPos.x + direction.x * 0.6,
+                spawnPos.y + direction.y * 0.6,
+                spawnPos.z + direction.z * 0.6
+        );
 
         // Launch the orb
         orb.shoot(direction.x, direction.y, direction.z, 1.5F, 0.0F);
