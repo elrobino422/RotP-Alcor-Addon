@@ -19,6 +19,7 @@ import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
 import com.rotpaddon.exampleaddon.action.SBHGravityCrush;
+import com.rotpaddon.exampleaddon.action.SBHGravityWell;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 
@@ -113,6 +114,18 @@ public class InitStands {
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
 
+    // Gravity Well persists after the cast, so SBH can combo with other moves.
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
+            ACTIONS.register("sbh_gravity_well",
+                    () -> new SBHGravityWell(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(12)
+                            .standPerformDuration(1)
+                            .standRecoveryTicks(10)
+                            .cooldown(300)
+                            .staminaCost(125)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
@@ -140,7 +153,8 @@ public class InitStands {
                             SBH_BLOCK.get(),
                             SBH_VOID_ORB.get(),
                             SBH_VOID_STEP.get(),
-                            SBH_GRAVITY_CRUSH.get()
+                            SBH_GRAVITY_CRUSH.get(),
+                            SBH_GRAVITY_WELL.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
