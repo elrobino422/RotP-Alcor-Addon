@@ -2,6 +2,7 @@
 {
   "entity.rotpalcoraddon.sbh": "SBH",
   "entity.rotpalcoraddon.sbh_gravity_well_core": "Gravity Well Core",
+  "entity.rotpalcoraddon.sbh_supermassive_black_hole": "Supermassive Black Hole",
   "stand.rotpalcoraddon.sbh": "Super Massive Black Hole",
 
   "action.rotpalcoraddon.sbh_punch": "Punch",
@@ -14,10 +15,14 @@
   "action.rotpalcoraddon.sbh_void_step": "Void Step",
   "action.rotpalcoraddon.sbh_gravity_crush": "Gravity Crush",
   "action.rotpalcoraddon.sbh_gravity_well": "Gravity Well",
+  "action.rotpalcoraddon.sbh_supermassive_black_hole": "Supermassive Black Hole",
 
   "entity.rotpalcoraddon.example_pickaxe": "Pickaxe",
 
   "story_part.rotpalcoraddon.alcor": "Alcor",
+
+  "death.attack.sbhSingularity": "%1$s was consumed by a singularity",
+  "death.attack.sbhSingularity.player": "%1$s was consumed by %2$s's singularity",
 
   "rotpalcoraddon.sbh_resolve_walkman1.name": "SBH - Resolve",
   "rotpalcoraddon.sbh_walkman2.name": "SBH - Track 2",
