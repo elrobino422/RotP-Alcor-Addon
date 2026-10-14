@@ -104,6 +104,18 @@ public class InitStands {
 
 
 
+    // Gravity Well persists after the cast, so SBH can combo with other moves.
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
+            ACTIONS.register("sbh_gravity_well",
+                    () -> new SBHGravityWell(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(12)
+                            .standPerformDuration(1)
+                            .standRecoveryTicks(10)
+                            .cooldown(300, 0)
+                            .staminaCost(125)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
             ACTIONS.register("sbh_gravity_crush",
                     () -> new SBHGravityCrush(new StandEntityAction.Builder()
@@ -119,18 +131,6 @@ public class InitStands {
                                     InitSounds.SBH_GRAVITY_CRUSH)
                             .cooldown(280, 0)
                             .staminaCost(100)
-                            .partsRequired(StandPart.ARMS)));
-
-    // Gravity Well persists after the cast, so SBH can combo with other moves.
-    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
-            ACTIONS.register("sbh_gravity_well",
-                    () -> new SBHGravityWell(new StandEntityAction.Builder()
-                            .standUserWalkSpeed(1.0F)
-                            .standWindupDuration(12)
-                            .standPerformDuration(1)
-                            .standRecoveryTicks(10)
-                            .cooldown(300, 0)
-                            .staminaCost(125)
                             .partsRequired(StandPart.ARMS)));
 
     // Ultimate: a delayed area singularity with a powerful final collapse.
