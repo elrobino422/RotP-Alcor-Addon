@@ -3,6 +3,7 @@ package com.rotpaddon.exampleaddon.init;
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.entity.ExamplePickaxeEntity;
 import com.rotpaddon.exampleaddon.entity.SBHGravityWellCoreEntity;
+import com.rotpaddon.exampleaddon.entity.SBHSupermassiveBlackHoleEntity;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -41,4 +42,16 @@ public class InitEntities {
                             .clientTrackingRange(8)
                             .updateInterval(1)
                             .build(AddonMain.MOD_ID + ":sbh_gravity_well_core"));
+    public static final RegistryObject<EntityType<SBHSupermassiveBlackHoleEntity>>
+            SBH_SUPERMASSIVE_BLACK_HOLE =
+            ENTITIES.register("sbh_supermassive_black_hole",
+                    () -> EntityType.Builder
+                            .<SBHSupermassiveBlackHoleEntity>of(
+                                    SBHSupermassiveBlackHoleEntity::new,
+                                    EntityClassification.MISC)
+                            .sized(1.0F, 1.0F)
+                            .clientTrackingRange(10)
+                            .updateInterval(1)
+                            .build(AddonMain.MOD_ID + ":sbh_supermassive_black_hole"));
+
 };

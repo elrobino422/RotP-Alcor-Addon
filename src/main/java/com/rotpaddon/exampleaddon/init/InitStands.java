@@ -20,6 +20,7 @@ import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
 import com.rotpaddon.exampleaddon.action.SBHGravityCrush;
 import com.rotpaddon.exampleaddon.action.SBHGravityWell;
+import com.rotpaddon.exampleaddon.action.SBHSupermassiveBlackHole;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 
@@ -103,9 +104,27 @@ public class InitStands {
 
 
 
+    // Gravity Well persists after the cast, so SBH can combo with other moves.
+    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
+            ACTIONS.register("sbh_gravity_well",
+                    () -> new SBHGravityWell(new StandEntityAction.Builder()
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(12)
+                            .standPerformDuration(1)
+                            .standRecoveryTicks(10)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_GRAVITY_WELL_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_GRAVITY_WELL_SFX)
+                            .cooldown(300, 0)
+                            .staminaCost(125)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
             ACTIONS.register("sbh_gravity_crush",
                     () -> new SBHGravityCrush(new StandEntityAction.Builder()
+                            // Shift + Gravity Well = Gravity Crush.
+                            .shiftVariationOf(SBH_GRAVITY_WELL)
                             .standUserWalkSpeed(1.0F)
                             .standWindupDuration(10)
                             .standPerformDuration(80)
@@ -118,16 +137,22 @@ public class InitStands {
                             .staminaCost(100)
                             .partsRequired(StandPart.ARMS)));
 
-    // Gravity Well persists after the cast, so SBH can combo with other moves.
-    public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
-            ACTIONS.register("sbh_gravity_well",
-                    () -> new SBHGravityWell(new StandEntityAction.Builder()
+    // Ultimate: a delayed area singularity with a powerful final collapse.
+    public static final RegistryObject<StandEntityAction> SBH_SUPERMASSIVE_BLACK_HOLE =
+            ACTIONS.register("sbh_supermassive_black_hole",
+                    () -> new SBHSupermassiveBlackHole(new StandEntityAction.Builder()
+                            .standPose(SBHVoidOrb.VOID_ORB_POSE)
+                            .standOffsetFromUser(0, 1.5)
                             .standUserWalkSpeed(1.0F)
-                            .standWindupDuration(12)
+                            .standWindupDuration(50)
                             .standPerformDuration(1)
-                            .standRecoveryTicks(10)
-                            .cooldown(300, 0)
-                            .staminaCost(125)
+                            .standRecoveryTicks(18)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_ULTIMATE_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_ULTIMATE_SFX)
+                            .cooldown(1800, 0)
+                            .staminaCost(350)
                             .partsRequired(StandPart.ARMS)));
 
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
@@ -153,12 +178,14 @@ public class InitStands {
                             SBH_PUNCH.get(),
                             SBH_BARRAGE.get()
                             )
+                    // Gravity Crush is Gravity Well's Sneak variant.
+                    // The ultimate remains a standalone right-click action.
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
                             SBH_VOID_ORB.get(),
                             SBH_VOID_STEP.get(),
-                            SBH_GRAVITY_CRUSH.get(),
-                            SBH_GRAVITY_WELL.get()
+                            SBH_GRAVITY_WELL.get(),
+                            SBH_SUPERMASSIVE_BLACK_HOLE.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)

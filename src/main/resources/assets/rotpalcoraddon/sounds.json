@@ -1,4 +1,3 @@
-
 {
   "sbh_stand_summon_voiceline": {
     "sounds": [
@@ -122,6 +121,25 @@
     "sounds": [
       "rotpalcoraddon:sbh_gravity_crush_voice"
     ]
+  },
+  "sbh_gravity_well_voice": {
+    "sounds": [
+      "rotpalcoraddon:sbh_gravity_well_voice"
+    ]
+  },
+  "sbh_gravity_well_sfx": {
+    "sounds": [
+      "rotpalcoraddon:sbh_gravity_well_sfx"
+    ]
+  },
+  "sbh_ultimate_voice": {
+    "sounds": [
+      "rotpalcoraddon:sbh_ultimate_voice"
+    ]
+  },
+  "sbh_ultimate_sfx": {
+    "sounds": [
+      "rotpalcoraddon:sbh_ultimate_sfx"
+    ]
   }
-
 }

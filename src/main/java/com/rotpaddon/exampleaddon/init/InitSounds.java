@@ -122,4 +122,28 @@ public class InitSounds {
                     () -> new SoundEvent(new ResourceLocation(
                             AddonMain.MOD_ID, "sbh_gravity_crush_voice")));
 
+
+    // SBH Gravity Well: voice at windup, gravitational activation sound on cast.
+    public static final RegistryObject<SoundEvent> SBH_GRAVITY_WELL_VOICE =
+            SOUNDS.register("sbh_gravity_well_voice",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_gravity_well_voice")));
+
+    public static final RegistryObject<SoundEvent> SBH_GRAVITY_WELL_SFX =
+            SOUNDS.register("sbh_gravity_well_sfx",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_gravity_well_sfx")));
+
+    // Supermassive Black Hole: separate voice and effect, with independent
+    // registration so they can be timed to their corresponding Stand phases.
+    public static final RegistryObject<SoundEvent> SBH_ULTIMATE_VOICE =
+            SOUNDS.register("sbh_ultimate_voice",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_ultimate_voice")));
+
+    public static final RegistryObject<SoundEvent> SBH_ULTIMATE_SFX =
+            SOUNDS.register("sbh_ultimate_sfx",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "sbh_ultimate_sfx")));
+
 }

@@ -4,6 +4,7 @@ import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.client.render.ExamplePickaxeRenderer;
 import com.rotpaddon.exampleaddon.client.render.SBHStandRenderer;
 import com.rotpaddon.exampleaddon.client.render.SBHGravityWellCoreRenderer;
+import com.rotpaddon.exampleaddon.client.render.SBHSupermassiveBlackHoleRenderer;
 import com.rotpaddon.exampleaddon.client.particle.SBHGravityWellParticle;
 import com.rotpaddon.exampleaddon.init.InitEntities;
 import com.rotpaddon.exampleaddon.init.InitParticles;
@@ -35,6 +36,9 @@ public class ClientInit {
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.SBH_GRAVITY_WELL_CORE.get(),
                 SBHGravityWellCoreRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(
+                InitEntities.SBH_SUPERMASSIVE_BLACK_HOLE.get(),
+                SBHSupermassiveBlackHoleRenderer::new);
     }
     @SubscribeEvent
     public static void registerGravityWellParticles(ParticleFactoryRegisterEvent event) {
