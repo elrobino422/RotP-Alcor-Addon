@@ -112,6 +112,10 @@ public class InitStands {
                             .standWindupDuration(12)
                             .standPerformDuration(1)
                             .standRecoveryTicks(10)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_GRAVITY_WELL_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_GRAVITY_WELL_SFX)
                             .cooldown(300, 0)
                             .staminaCost(125)
                             .partsRequired(StandPart.ARMS)));
@@ -143,6 +147,10 @@ public class InitStands {
                             .standWindupDuration(50)
                             .standPerformDuration(1)
                             .standRecoveryTicks(18)
+                            .standSound(StandEntityAction.Phase.WINDUP,
+                                    InitSounds.SBH_ULTIMATE_VOICE)
+                            .standSound(StandEntityAction.Phase.PERFORM,
+                                    InitSounds.SBH_ULTIMATE_SFX)
                             .cooldown(1800, 0)
                             .staminaCost(350)
                             .partsRequired(StandPart.ARMS)));
