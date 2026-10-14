@@ -107,8 +107,8 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_GRAVITY_CRUSH =
             ACTIONS.register("sbh_gravity_crush",
                     () -> new SBHGravityCrush(new StandEntityAction.Builder()
-                            // Shift + Void Orb = Gravity Crush.
-                            .shiftVariationOf(SBH_VOID_ORB)
+                            // Shift + Gravity Well = Gravity Crush.
+                            .shiftVariationOf(SBH_GRAVITY_WELL)
                             .standUserWalkSpeed(1.0F)
                             .standWindupDuration(10)
                             .standPerformDuration(80)
@@ -137,8 +137,6 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_SUPERMASSIVE_BLACK_HOLE =
             ACTIONS.register("sbh_supermassive_black_hole",
                     () -> new SBHSupermassiveBlackHole(new StandEntityAction.Builder()
-                            // Shift + Gravity Well = Supermassive Black Hole.
-                            .shiftVariationOf(SBH_GRAVITY_WELL)
                             .standPose(SBHVoidOrb.VOID_ORB_POSE)
                             .standOffsetFromUser(0, 1.5)
                             .standUserWalkSpeed(1.0F)
@@ -172,13 +170,14 @@ public class InitStands {
                             SBH_PUNCH.get(),
                             SBH_BARRAGE.get()
                             )
-                    // Shift variants stay registered, but do not consume
-                    // separate default hotbar slots.
+                    // Gravity Crush is Gravity Well's Sneak variant.
+                    // The ultimate remains a standalone right-click action.
                     .rightClickHotbar(
                             SBH_BLOCK.get(),
                             SBH_VOID_ORB.get(),
                             SBH_VOID_STEP.get(),
-                            SBH_GRAVITY_WELL.get()
+                            SBH_GRAVITY_WELL.get(),
+                            SBH_SUPERMASSIVE_BLACK_HOLE.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
