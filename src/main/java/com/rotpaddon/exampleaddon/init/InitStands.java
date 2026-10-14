@@ -20,6 +20,7 @@ import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
 import com.rotpaddon.exampleaddon.action.SBHGravityCrush;
 import com.rotpaddon.exampleaddon.action.SBHGravityWell;
+import com.rotpaddon.exampleaddon.action.SBHSupermassiveBlackHole;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 
@@ -130,6 +131,20 @@ public class InitStands {
                             .staminaCost(125)
                             .partsRequired(StandPart.ARMS)));
 
+    // Ultimate: a delayed area singularity with a powerful final collapse.
+    public static final RegistryObject<StandEntityAction> SBH_SUPERMASSIVE_BLACK_HOLE =
+            ACTIONS.register("sbh_supermassive_black_hole",
+                    () -> new SBHSupermassiveBlackHole(new StandEntityAction.Builder()
+                            .standPose(SBHVoidOrb.VOID_ORB_POSE)
+                            .standOffsetFromUser(0, 1.5)
+                            .standUserWalkSpeed(1.0F)
+                            .standWindupDuration(50)
+                            .standPerformDuration(1)
+                            .standRecoveryTicks(18)
+                            .cooldown(1800, 0)
+                            .staminaCost(350)
+                            .partsRequired(StandPart.ARMS)));
+
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
@@ -158,7 +173,8 @@ public class InitStands {
                             SBH_VOID_ORB.get(),
                             SBH_VOID_STEP.get(),
                             SBH_GRAVITY_CRUSH.get(),
-                            SBH_GRAVITY_WELL.get()
+                            SBH_GRAVITY_WELL.get(),
+                            SBH_SUPERMASSIVE_BLACK_HOLE.get()
                             )
                     .defaultStats(StandStats.class, new StandStats.Builder()
                             .tier(6)
