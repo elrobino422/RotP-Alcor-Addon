@@ -74,6 +74,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_VOID_ORB =
             ACTIONS.register("sbh_void_orb",
                     () -> new SBHVoidOrb(new StandEntityAction.Builder()
+                            .resolveLevelToUnlock(1)
                             .standPose(SBHVoidOrb.VOID_ORB_POSE)
 
                             // SBH moves in front of the player
@@ -108,6 +109,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_GRAVITY_WELL =
             ACTIONS.register("sbh_gravity_well",
                     () -> new SBHGravityWell(new StandEntityAction.Builder()
+                            .resolveLevelToUnlock(3)
                             .standUserWalkSpeed(1.0F)
                             .standWindupDuration(12)
                             .standPerformDuration(1)
@@ -125,6 +127,7 @@ public class InitStands {
                     () -> new SBHGravityCrush(new StandEntityAction.Builder()
                             // Shift + Gravity Well = Gravity Crush.
                             .shiftVariationOf(SBH_GRAVITY_WELL)
+                            .resolveLevelToUnlock(3)
                             .standUserWalkSpeed(1.0F)
                             .standWindupDuration(10)
                             .standPerformDuration(80)
@@ -141,6 +144,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_SUPERMASSIVE_BLACK_HOLE =
             ACTIONS.register("sbh_supermassive_black_hole",
                     () -> new SBHSupermassiveBlackHole(new StandEntityAction.Builder()
+                            .resolveLevelToUnlock(4)
                             .standPose(SBHVoidOrb.VOID_ORB_POSE)
                             .standOffsetFromUser(0, 1.5)
                             .standUserWalkSpeed(1.0F)
@@ -158,6 +162,7 @@ public class InitStands {
     public static final RegistryObject<StandEntityAction> SBH_VOID_STEP =
             ACTIONS.register("sbh_void_step",
                     () -> new SBHVoidStep(new StandEntityAction.Builder()
+                            .resolveLevelToUnlock(2)
                             .standRecoveryTicks(10)
                             .cooldown(160, 0)
                             .standSound(InitSounds.SBH_VOID_STEP)

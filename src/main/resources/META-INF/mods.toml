@@ -27,14 +27,15 @@ displayName="Rotp Alcor Addon" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="alcor_logo.png" #optional
 # A text field displayed in the mod UI
 credits="StandoByte, " #optional
 # A text field displayed in the mod UI
 authors="elrobino" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-A template for making Stand addons for Ripples of the Past mod.
+An addon for Ripples of the Past introducing
+new Stands, original abilities.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.rotpalcoraddon]] #optional
