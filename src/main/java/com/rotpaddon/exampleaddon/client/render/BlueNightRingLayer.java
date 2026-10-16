@@ -30,6 +30,9 @@ public class BlueNightRingLayer extends LayerRenderer<
 
     private final PlayerModel<AbstractClientPlayerEntity> braceletModel;
 
+    private boolean hookLogged = false;
+    private boolean activeLogged = false;
+
     public BlueNightRingLayer(PlayerRenderer renderer, boolean slim) {
         super(renderer);
         this.braceletModel = new PlayerModel<>(0.05F, slim);
@@ -87,6 +90,26 @@ public class BlueNightRingLayer extends LayerRenderer<
             int packedLight,
             AbstractClientPlayerEntity player,
             PlayerRenderer playerRenderer) {
+
+        if (!hookLogged) {
+            AddonMain.LOGGER.info(
+                    "[BLUE NIGHT] First-person hook called! Side: {}",
+                    side
+            );
+            hookLogged = true;
+        }
+
+        if (side == HandSide.RIGHT
+                && isBlueNightActive(player)
+                && !activeLogged) {
+
+            AddonMain.LOGGER.info(
+                    "[BLUE NIGHT] Right-hand bracelet should render!"
+            );
+
+            activeLogged = true;
+        }
+
 
         if (side != HandSide.RIGHT || !isBlueNightActive(player)) {
             return;
