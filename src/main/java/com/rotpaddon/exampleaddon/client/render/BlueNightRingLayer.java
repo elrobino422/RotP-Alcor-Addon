@@ -1,10 +1,11 @@
 
 package com.rotpaddon.exampleaddon.client.render;
 
+import com.github.standobyte.jojo.client.render.entity.layerrenderer.IFirstPersonHandLayer;
+import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.rotpaddon.exampleaddon.AddonMain;
 import com.rotpaddon.exampleaddon.init.InitStands;
-import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -13,11 +14,13 @@ import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.client.renderer.entity.model.PlayerModel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 
 public class BlueNightRingLayer extends LayerRenderer<
         AbstractClientPlayerEntity,
-        PlayerModel<AbstractClientPlayerEntity>> {
+        PlayerModel<AbstractClientPlayerEntity>>
+        implements IFirstPersonHandLayer {
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(
@@ -25,13 +28,25 @@ public class BlueNightRingLayer extends LayerRenderer<
                     "textures/entity/blue_night_ring.png"
             );
 
-    private final PlayerModel<AbstractClientPlayerEntity> ringModel;
+    private final PlayerModel<AbstractClientPlayerEntity> braceletModel;
 
     public BlueNightRingLayer(PlayerRenderer renderer, boolean slim) {
         super(renderer);
-        this.ringModel = new PlayerModel<>(0.05F, slim);
+        this.braceletModel = new PlayerModel<>(0.05F, slim);
     }
 
+    private static boolean isBlueNightActive(
+            AbstractClientPlayerEntity player) {
+
+        return IStandPower.getStandPowerOptional(player)
+                .map(power ->
+                        power.isActive()
+                                && power.getType() ==
+                                InitStands.STAND_BLUE_NIGHT.getStandType())
+                .orElse(false);
+    }
+
+    // Third-person bracelet rendering
     @Override
     public void render(
             MatrixStack stack,
@@ -45,33 +60,47 @@ public class BlueNightRingLayer extends LayerRenderer<
             float netHeadYaw,
             float headPitch) {
 
-        boolean hasBlueNight = IStandPower
-                .getStandPowerOptional(player)
-                .map(power ->
-                        power.hasPower()
-                                && power.getType()
-                                == InitStands.STAND_BLUE_NIGHT.getStandType())
-                .orElse(false);
-
-        if (!hasBlueNight) {
+        if (!isBlueNightActive(player)) {
             return;
         }
 
-        // Follow the player's animated right arm.
-        ringModel.rightSleeve.copyFrom(
+        braceletModel.rightSleeve.copyFrom(
                 getParentModel().rightArm
         );
 
-        ringModel.rightSleeve.visible = true;
+        braceletModel.rightSleeve.visible = true;
 
-        // Render only the textured overlay on the arm.
-        ringModel.rightSleeve.render(
+        braceletModel.rightSleeve.render(
                 stack,
-                buffer.getBuffer(
-                        RenderType.entityTranslucent(TEXTURE)
-                ),
+                buffer.getBuffer(RenderType.entityTranslucent(TEXTURE)),
                 packedLight,
                 OverlayTexture.NO_OVERLAY
+        );
+    }
+
+    // First-person bracelet rendering
+    @Override
+    public void renderHandFirstPerson(
+            HandSide side,
+            MatrixStack stack,
+            IRenderTypeBuffer buffer,
+            int packedLight,
+            AbstractClientPlayerEntity player,
+            PlayerRenderer playerRenderer) {
+
+        if (side != HandSide.RIGHT || !isBlueNightActive(player)) {
+            return;
+        }
+
+        IFirstPersonHandLayer.defaultRender(
+                side,
+                stack,
+                buffer,
+                packedLight,
+                player,
+                playerRenderer,
+                braceletModel,
+                TEXTURE
         );
     }
 }
