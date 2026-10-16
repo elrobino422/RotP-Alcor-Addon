@@ -9,6 +9,8 @@ import com.rotpaddon.exampleaddon.client.particle.SBHGravityWellParticle;
 import com.rotpaddon.exampleaddon.init.InitEntities;
 import com.rotpaddon.exampleaddon.init.InitParticles;
 import com.rotpaddon.exampleaddon.init.InitStands;
+import com.rotpaddon.exampleaddon.client.render.BlueNightStandRenderer;
+import com.rotpaddon.exampleaddon.client.render.BlueNightRingLayer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,6 +41,23 @@ public class ClientInit {
         RenderingRegistry.registerEntityRenderingHandler(
                 InitEntities.SBH_SUPERMASSIVE_BLACK_HOLE.get(),
                 SBHSupermassiveBlackHoleRenderer::new);
+
+        RenderingRegistry.registerEntityRenderingHandler(
+                InitStands.STAND_BLUE_NIGHT.getEntityType(),
+                BlueNightStandRenderer::new);
+        event.enqueueWork(() -> {
+            Minecraft.getInstance()
+                    .getEntityRenderDispatcher()
+                    .getSkinMap()
+                    .forEach((skinType, renderer) -> {
+                        renderer.addLayer(
+                                new BlueNightRingLayer(
+                                        renderer,
+                                        "slim".equals(skinType)
+                                )
+                        );
+                    });
+        });
     }
     @SubscribeEvent
     public static void registerGravityWellParticles(ParticleFactoryRegisterEvent event) {

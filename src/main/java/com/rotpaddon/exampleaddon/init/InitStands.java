@@ -14,7 +14,7 @@ import com.github.standobyte.jojo.power.impl.stand.stats.StandStats;
 import com.github.standobyte.jojo.power.impl.stand.type.EntityStandType;
 import com.github.standobyte.jojo.power.impl.stand.type.StandType;
 import com.rotpaddon.exampleaddon.AddonMain;
-import com.rotpaddon.exampleaddon.action.SBHStandThrowPickaxe;
+import com.rotpaddon.exampleaddon.entity.BlueNightStandEntity;
 import com.rotpaddon.exampleaddon.entity.SBHStandEntity;
 import com.rotpaddon.exampleaddon.action.SBHVoidOrb;
 import com.rotpaddon.exampleaddon.action.SBHVoidStep;
@@ -145,10 +145,10 @@ public class InitStands {
             ACTIONS.register("sbh_supermassive_black_hole",
                     () -> new SBHSupermassiveBlackHole(new StandEntityAction.Builder()
                             .resolveLevelToUnlock(4)
-                            .standPose(SBHVoidOrb.VOID_ORB_POSE)
+                            .standPose(SBHSupermassiveBlackHole.ULTIMATE_POSE)
                             .standOffsetFromUser(0, 1.5)
                             .standUserWalkSpeed(1.0F)
-                            .standWindupDuration(50)
+                            .standWindupDuration(40)
                             .standPerformDuration(1)
                             .standRecoveryTicks(18)
                             .standSound(StandEntityAction.Phase.WINDUP,
@@ -204,9 +204,52 @@ public class InitStands {
                     .addOst(InitSounds.SBH_OST)
                     .build(),
 
+
                     InitEntities.ENTITIES,
                     () -> new StandEntityType<SBHStandEntity>(SBHStandEntity::new, 0.7F, 2.1F)
                     .summonSound(InitSounds.SBH_SUMMON_SOUND)
                     .unsummonSound(InitSounds.SBH_UNSUMMON_SOUND))
             .withDefaultStandAttributes();
+
+
+
+    // ========================================
+    // Blue Night — Initial Registration
+    // ========================================
+
+    public static final EntityStandRegistryObject<
+            EntityStandType<StandStats>,
+            StandEntityType<BlueNightStandEntity>> STAND_BLUE_NIGHT =
+            new EntityStandRegistryObject<>("blue_night",
+                    STANDS,
+                    () -> new EntityStandType.Builder<StandStats>()
+                            .color(0x4752A9)
+                            .storyPartName(new TranslationTextComponent(
+                                    "story_part.rotpalcoraddon.alcor"))
+
+                            // Temporary settings for the ring Stand
+                            .disableManualControl()
+                            .disableStandLeap()
+
+                            // Exclude unfinished Stand from random arrows
+                            .setSurvivalGameplayPool(
+                                    StandType.StandSurvivalGameplayPool.NON_ARROW)
+
+                            // Temporary stats — we'll balance later
+                            .defaultStats(StandStats.class,
+                                    new StandStats.Builder()
+                                            .tier(5)
+                                            .power(10)
+                                            .speed(12)
+                                            .range(10, 20)
+                                            .durability(10)
+                                            .precision(15)
+                                            .build())
+                            .build(),
+
+                    InitEntities.ENTITIES,
+                    () -> new StandEntityType<BlueNightStandEntity>(
+                            BlueNightStandEntity::new, 0.7F, 2.1F))
+                    .withDefaultStandAttributes();
+
 }

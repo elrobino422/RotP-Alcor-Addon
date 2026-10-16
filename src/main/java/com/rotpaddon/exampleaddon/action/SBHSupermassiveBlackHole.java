@@ -4,6 +4,7 @@ import com.github.standobyte.jojo.action.ActionTarget;
 import com.github.standobyte.jojo.action.stand.StandEntityAction;
 import com.github.standobyte.jojo.entity.stand.StandEntity;
 import com.github.standobyte.jojo.entity.stand.StandEntityTask;
+import com.github.standobyte.jojo.entity.stand.StandPose;
 import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 import com.rotpaddon.exampleaddon.entity.SBHSupermassiveBlackHoleEntity;
 
@@ -13,6 +14,7 @@ import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
+import com.github.standobyte.jojo.entity.stand.StandPose;
 
 /**
  * SBH's ultimate: an independent, timed singularity that draws in enemies,
@@ -22,6 +24,9 @@ import net.minecraft.world.World;
 public class SBHSupermassiveBlackHole extends StandEntityAction {
     private static final double CAST_RANGE = 48.0D;
     private static final double AIR_FALLBACK = 38.0D;
+
+    public static final StandPose ULTIMATE_POSE =
+            new StandPose("ultimate");
 
     public SBHSupermassiveBlackHole(StandEntityAction.Builder builder) {
         super(builder);

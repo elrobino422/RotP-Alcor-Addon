@@ -27,5 +27,8 @@
   "rotpalcoraddon.sbh_resolve_walkman1.name": "SBH - Resolve",
   "rotpalcoraddon.sbh_walkman2.name": "SBH - Track 2",
   "rotpalcoraddon.sbh_walkman3.name": "SBH - Track 3",
-  "rotpalcoraddon.sbh_walkman4.name": "SBH - Track 4"
+  "rotpalcoraddon.sbh_walkman4.name": "SBH - Track 4",
+
+  "stand.rotpalcoraddon.blue_night": "Blue Night",
+  "entity.rotpalcoraddon.blue_night": "Blue Night"
 }
