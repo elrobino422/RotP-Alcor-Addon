@@ -1,7 +1,7 @@
 
 package com.rotpaddon.exampleaddon.client.render;
 
-import com.github.standobyte.jojo.client.render.entity.layerrenderer.IFirstPersonHandLayer;
+import com.github.standobyte.jojo.client.ClientUtil;
 import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.rotpaddon.exampleaddon.AddonMain;
@@ -17,10 +17,19 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RenderArmEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+
+@EventBusSubscriber(
+        modid = AddonMain.MOD_ID,
+        bus = EventBusSubscriber.Bus.FORGE,
+        value = Dist.CLIENT
+)
 public class BlueNightRingLayer extends LayerRenderer<
         AbstractClientPlayerEntity,
-        PlayerModel<AbstractClientPlayerEntity>>
-        implements IFirstPersonHandLayer {
+        PlayerModel<AbstractClientPlayerEntity>> {
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(
@@ -30,8 +39,13 @@ public class BlueNightRingLayer extends LayerRenderer<
 
     private final PlayerModel<AbstractClientPlayerEntity> braceletModel;
 
-    private boolean hookLogged = false;
-    private boolean activeLogged = false;
+    private static final PlayerModel<AbstractClientPlayerEntity> FP_DEFAULT =
+            new PlayerModel<>(0.05F, false);
+
+    private static final PlayerModel<AbstractClientPlayerEntity> FP_SLIM =
+            new PlayerModel<>(0.05F, true);
+
+    private static boolean debugLogged = false;
 
     public BlueNightRingLayer(PlayerRenderer renderer, boolean slim) {
         super(renderer);
@@ -49,7 +63,10 @@ public class BlueNightRingLayer extends LayerRenderer<
                 .orElse(false);
     }
 
-    // Third-person bracelet rendering
+    // ==========================================
+    // THIRD PERSON — Existing working rendering
+    // ==========================================
+
     @Override
     public void render(
             MatrixStack stack,
@@ -75,55 +92,59 @@ public class BlueNightRingLayer extends LayerRenderer<
 
         braceletModel.rightSleeve.render(
                 stack,
-                buffer.getBuffer(RenderType.entityTranslucent(TEXTURE)),
+                buffer.getBuffer(
+                        RenderType.entityTranslucent(TEXTURE)
+                ),
                 packedLight,
                 OverlayTexture.NO_OVERLAY
         );
     }
 
-    // First-person bracelet rendering
-    @Override
-    public void renderHandFirstPerson(
-            HandSide side,
-            MatrixStack stack,
-            IRenderTypeBuffer buffer,
-            int packedLight,
-            AbstractClientPlayerEntity player,
-            PlayerRenderer playerRenderer) {
+    // ==========================================
+    // FIRST PERSON — Forge RenderArmEvent
+    // ==========================================
 
-        if (!hookLogged) {
+    @SubscribeEvent
+    public static void renderFirstPerson(RenderArmEvent event) {
+
+        if (!debugLogged) {
             AddonMain.LOGGER.info(
-                    "[BLUE NIGHT] First-person hook called! Side: {}",
-                    side
+                    "[BLUE NIGHT] Forge RenderArmEvent reached!"
             );
-            hookLogged = true;
+            debugLogged = true;
         }
 
-        if (side == HandSide.RIGHT
-                && isBlueNightActive(player)
-                && !activeLogged) {
-
-            AddonMain.LOGGER.info(
-                    "[BLUE NIGHT] Right-hand bracelet should render!"
-            );
-
-            activeLogged = true;
-        }
-
-
-        if (side != HandSide.RIGHT || !isBlueNightActive(player)) {
+        if (event.getArm() != HandSide.RIGHT) {
             return;
         }
 
-        IFirstPersonHandLayer.defaultRender(
-                side,
-                stack,
-                buffer,
-                packedLight,
-                player,
-                playerRenderer,
-                braceletModel,
-                TEXTURE
+        AbstractClientPlayerEntity player = event.getPlayer();
+
+        if (player == null
+                || player.isSpectator()
+                || !isBlueNightActive(player)) {
+            return;
+        }
+
+        // Support both Steve and Alex skin models.
+        PlayerModel<AbstractClientPlayerEntity> model =
+                "slim".equals(player.getModelName())
+                        ? FP_SLIM : FP_DEFAULT;
+
+        // Prepare the model for first-person rendering.
+        ClientUtil.setupForFirstPersonRender(model, player);
+
+        model.rightSleeve.xRot = 0.0F;
+        model.rightSleeve.visible = true;
+
+        // Draw only the bracelet overlay.
+        model.rightSleeve.render(
+                event.getPoseStack(),
+                event.getMultiBufferSource().getBuffer(
+                        RenderType.entityTranslucent(TEXTURE)
+                ),
+                event.getPackedLight(),
+                OverlayTexture.NO_OVERLAY
         );
     }
 }
