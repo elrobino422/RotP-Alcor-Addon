@@ -29,11 +29,25 @@ public final class BlueNightEquipmentManager {
 
     // Identifies Scythes created by Blue Night,
     // not ordinary items obtained with /give.
-    private static boolean isManifestedScythe(ItemStack stack) {
+    public static boolean isManifestedScythe(ItemStack stack) {
         return !stack.isEmpty()
                 && stack.getItem() == InitItems.BLUE_NIGHT_SCYTHE.get()
                 && stack.hasTag()
                 && stack.getTag().getBoolean(MANIFESTED_TAG);
+    }
+
+    /**
+     * Shared authoritative form check for both item attacks and Insomnia gains.
+     * Switching to another Stand must never grant Blue Night's resource.
+     */
+    public static boolean isScytheActive(PlayerEntity player) {
+        return IStandPower.getStandPowerOptional(player)
+                .map(power -> power.isActive()
+                        && power.getType() == InitStands.STAND_BLUE_NIGHT.getStandType()
+                        && power.getStandManifestation() instanceof IAlcorFormHolder
+                        && ((IAlcorFormHolder) power.getStandManifestation())
+                                .alcorGetForm() == 1)
+                .orElse(false);
     }
 
     // Called by the shared form-selection packet.
