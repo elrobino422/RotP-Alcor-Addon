@@ -1,10 +1,8 @@
-
 {
   "entity.rotpalcoraddon.sbh": "SBH",
   "entity.rotpalcoraddon.sbh_gravity_well_core": "Gravity Well Core",
   "entity.rotpalcoraddon.sbh_supermassive_black_hole": "Supermassive Black Hole",
   "stand.rotpalcoraddon.sbh": "Super Massive Black Hole",
-
   "action.rotpalcoraddon.sbh_punch": "Punch",
   "action.rotpalcoraddon.sbh_heavy_punch": "Heavy Punch",
   "action.rotpalcoraddon.sbh_finisher_punch": "Finisher Punch",
@@ -16,21 +14,19 @@
   "action.rotpalcoraddon.sbh_gravity_crush": "Gravity Crush",
   "action.rotpalcoraddon.sbh_gravity_well": "Gravity Well",
   "action.rotpalcoraddon.sbh_supermassive_black_hole": "Supermassive Black Hole",
-
   "entity.rotpalcoraddon.example_pickaxe": "Pickaxe",
-
   "story_part.rotpalcoraddon.alcor": "Alcor",
-
   "death.attack.sbhSingularity": "%1$s was consumed by a singularity",
   "death.attack.sbhSingularity.player": "%1$s was consumed by %2$s's singularity",
-
   "rotpalcoraddon.sbh_resolve_walkman1.name": "SBH - Resolve",
   "rotpalcoraddon.sbh_walkman2.name": "SBH - Track 2",
   "rotpalcoraddon.sbh_walkman3.name": "SBH - Track 3",
   "rotpalcoraddon.sbh_walkman4.name": "SBH - Track 4",
-
   "stand.rotpalcoraddon.blue_night": "Blue Night",
   "entity.rotpalcoraddon.blue_night": "Blue Night",
   "item.rotpalcoraddon.blue_night_scythe": "Moon Reaper",
-  "action.rotpalcoraddon.blue_night_select_form": "Select Weapon Form"
+  "action.rotpalcoraddon.blue_night_select_form": "Select Weapon Form",
+  "action.rotpalcoraddon.blue_night_reap_of_insomnia": "Reap of Insomnia",
+  "message.rotpalcoraddon.blue_night.requires_moon_reaper": "Hold your manifested Moon Reaper in your main hand to use this skill.",
+  "message.rotpalcoraddon.blue_night.reap_missed": "Reap of Insomnia - missed"
 }
