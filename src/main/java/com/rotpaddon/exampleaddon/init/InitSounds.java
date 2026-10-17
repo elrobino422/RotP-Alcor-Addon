@@ -16,6 +16,12 @@ public class InitSounds {
     public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(
             ForgeRegistries.SOUND_EVENTS, AddonMain.MOD_ID);
 
+    // Original swoosh used by Moon Reaper's Reap of Insomnia V2.
+    public static final RegistryObject<SoundEvent> BLUE_NIGHT_REAP_OF_INSOMNIA_SFX =
+            SOUNDS.register("blue_night_reap_of_insomnia",
+                    () -> new SoundEvent(new ResourceLocation(
+                            AddonMain.MOD_ID, "blue_night_reap_of_insomnia")));
+
     public static final RegistryObject<SoundEvent> SBH_VOICE_SUMMON = SOUNDS.register(
             "sbh_stand_summon_voiceline",
             () -> new SoundEvent(new ResourceLocation(AddonMain.MOD_ID, "sbh_stand_summon_voiceline")));
