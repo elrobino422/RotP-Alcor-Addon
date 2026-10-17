@@ -1,7 +1,6 @@
 package com.rotpaddon.exampleaddon.client.gui;
 
 import com.github.standobyte.jojo.client.ClientModSettings;
-import com.github.standobyte.jojo.client.ui.actionshud.ActionsOverlayGui;
 import com.github.standobyte.jojo.client.ui.actionshud.ActionsOverlayGui.PositionConfig;
 import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -76,7 +75,7 @@ public final class BlueNightInsomniaHud {
 
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.level == null
-                || ActionsOverlayGui.noHudRender(mc)) return;
+                || mc.options.hideGui) return;
 
         boolean blueNightActive = IStandPower.getStandPowerOptional(mc.player)
                 .map(power -> power.isActive()
