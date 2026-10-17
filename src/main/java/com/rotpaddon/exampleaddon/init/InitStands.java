@@ -23,6 +23,8 @@ import com.rotpaddon.exampleaddon.action.SBHGravityWell;
 import com.rotpaddon.exampleaddon.action.SBHSupermassiveBlackHole;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
+import com.github.standobyte.jojo.action.stand.StandAction;
+import com.rotpaddon.exampleaddon.action.AlcorSelectFormAction;
 
 
 
@@ -217,6 +219,15 @@ public class InitStands {
     // Blue Night — Initial Registration
     // ========================================
 
+
+    public static final RegistryObject<StandAction>
+            BLUE_NIGHT_SELECT_FORM =
+            ACTIONS.register("blue_night_select_form",
+                    () -> new AlcorSelectFormAction(
+                            new StandAction.Builder()
+                                    .resolveLevelToUnlock(0)
+                                    .cooldown(5, 0)));
+
     public static final EntityStandRegistryObject<
             EntityStandType<StandStats>,
             StandEntityType<BlueNightStandEntity>> STAND_BLUE_NIGHT =
@@ -234,6 +245,10 @@ public class InitStands {
                             // Exclude unfinished Stand from random arrows
                             .setSurvivalGameplayPool(
                                     StandType.StandSurvivalGameplayPool.NON_ARROW)
+
+                            .rightClickHotbar(
+                                    BLUE_NIGHT_SELECT_FORM.get()
+                            )
 
                             // Temporary stats — we'll balance later
                             .defaultStats(StandStats.class,

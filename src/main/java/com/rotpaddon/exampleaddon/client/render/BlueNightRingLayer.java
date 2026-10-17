@@ -21,6 +21,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RenderArmEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import com.rotpaddon.exampleaddon.form.IAlcorFormHolder;
 
 @EventBusSubscriber(
         modid = AddonMain.MOD_ID,
@@ -58,6 +59,11 @@ public class BlueNightRingLayer extends LayerRenderer<
         return IStandPower.getStandPowerOptional(player)
                 .map(power ->
                         power.isActive()
+
+                                && power.getStandManifestation() instanceof IAlcorFormHolder
+                                && ((IAlcorFormHolder) power.getStandManifestation())
+                                .alcorGetForm() == 0
+
                                 && power.getType() ==
                                 InitStands.STAND_BLUE_NIGHT.getStandType())
                 .orElse(false);

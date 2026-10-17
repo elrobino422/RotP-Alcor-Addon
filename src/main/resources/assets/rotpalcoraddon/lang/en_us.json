@@ -30,5 +30,7 @@
   "rotpalcoraddon.sbh_walkman4.name": "SBH - Track 4",
 
   "stand.rotpalcoraddon.blue_night": "Blue Night",
-  "entity.rotpalcoraddon.blue_night": "Blue Night"
+  "entity.rotpalcoraddon.blue_night": "Blue Night",
+  "item.rotpalcoraddon.blue_night_scythe": "Moon Reaper",
+  "action.rotpalcoraddon.blue_night_select_form": "Select Weapon Form"
 }

@@ -1,0 +1,1076 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"texture_size": [128, 128],
+	"textures": {
+		"0": "rotpalcoraddon:entity/blue_night_scythe",
+		"particle": "rotpalcoraddon:entity/blue_night_scythe"
+	},
+	"elements": [
+		{
+			"name": "01 • Obsidian core | full haft",
+			"from": [-0.25, -12.7, 7.25],
+			"to": [2.05, 22.6, 9.45],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.9, 4.95, 8.35]},
+			"faces": {
+				"north": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 6, 8, 8], "texture": "#0"},
+				"down": {"uv": [2, 2, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "02 • Rear side rail",
+			"from": [-0.48, -10.2, 8.7],
+			"to": [0.02, 21.7, 9.7],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.23, 5.75, 9.2]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "03 • Outer spine rail",
+			"from": [1.92, -10.8, 7.15],
+			"to": [2.35, 22, 9.45],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2.135, 5.6, 8.3]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "04 • Front azure inlay",
+			"from": [0.54, -9.6, 7.08],
+			"to": [1.23, 20.8, 7.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.885, 5.6, 7.165]},
+			"faces": {
+				"north": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"east": {"uv": [4, 0, 6, 2], "texture": "#0"},
+				"south": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"west": {"uv": [4, 0, 6, 2], "texture": "#0"},
+				"up": {"uv": [4, 12, 6, 14], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "05 • Front silver thread",
+			"from": [1.3, -10.2, 7.08],
+			"to": [1.49, 20.5, 7.24],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1.395, 5.15, 7.16]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "06 • Star chart along grip",
+			"from": [-0.26, 5.7, 7.1],
+			"to": [0.13, 16.1, 7.24],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.065, 10.9, 7.17]},
+			"faces": {
+				"north": {"uv": [10, 6, 12, 8], "texture": "#0"},
+				"east": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"south": {"uv": [10, 6, 12, 8], "texture": "#0"},
+				"west": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 2, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "07 • Pommel endcap",
+			"from": [-1.15, -14.35, 6.85],
+			"to": [2.95, -12.05, 9.8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.9, -13.2, 8.325]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "08 • Pommel black inset",
+			"from": [-0.52, -14.6, 6.68],
+			"to": [2.28, -13.3, 7.05],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.88, -13.95, 6.865]},
+			"faces": {
+				"north": {"uv": [0, 8, 2, 10], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [0, 8, 2, 10], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [10, 6, 12, 8], "texture": "#0"},
+				"down": {"uv": [8, 10, 10, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "09 • Pommel moonstone",
+			"from": [0.18, -14.86, 6.5],
+			"to": [1.5, -13.51, 6.68],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.84, -14.185, 6.59]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "10 • Pommel point",
+			"from": [0.35, -15.65, 7.27],
+			"to": [1.55, -14, 9.05],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.95, -14.825, 8.16]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "11 • Grip upper wrap",
+			"from": [-0.46, -9.5, 7],
+			"to": [2.27, 4.2, 9.62],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.905, -2.65, 8.31]},
+			"faces": {
+				"north": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"east": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"south": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"west": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"up": {"uv": [8, 8, 10, 10], "texture": "#0"},
+				"down": {"uv": [2, 2, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "12 • Grip face panel",
+			"from": [-0.07, -8.5, 6.9],
+			"to": [1.91, 3.4, 7.08],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.92, -2.55, 6.99]},
+			"faces": {
+				"north": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"east": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"south": {"uv": [4, 2, 6, 4], "texture": "#0"},
+				"west": {"uv": [2, 2, 4, 4], "texture": "#0"},
+				"up": {"uv": [8, 8, 10, 10], "texture": "#0"},
+				"down": {"uv": [2, 2, 4, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 01",
+			"from": [-0.65, -9, 6.8],
+			"to": [2.44, -8.57, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, -8.785, 8.27]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 02",
+			"from": [-0.65, -6.7, 6.8],
+			"to": [2.44, -6.27, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, -6.485, 8.27]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 03",
+			"from": [-0.65, -4.4, 6.8],
+			"to": [2.44, -3.97, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, -4.185, 8.27]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 04",
+			"from": [-0.65, -2.1, 6.8],
+			"to": [2.44, -1.67, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, -1.885, 8.27]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 05",
+			"from": [-0.65, 0.2, 6.8],
+			"to": [2.44, 0.63, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, 0.415, 8.27]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "13 • Spiral wrap band 06",
+			"from": [-0.65, 2.5, 6.8],
+			"to": [2.44, 2.93, 9.74],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.895, 2.715, 8.27]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "14 • Moonsteel stud 01",
+			"from": [0.62, -7.7, 6.65],
+			"to": [1.37, -7.03, 6.86],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.995, -7.365, 6.755]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "14 • Moonsteel stud 02",
+			"from": [0.62, -3.1, 6.65],
+			"to": [1.37, -2.43, 6.86],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.995, -2.765, 6.755]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "14 • Moonsteel stud 03",
+			"from": [0.62, 1.5, 6.65],
+			"to": [1.37, 2.17, 6.86],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.995, 1.835, 6.755]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "15 • Guard center socket",
+			"from": [-1.75, 4.45, 6.5],
+			"to": [3.25, 7.35, 9.96],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.75, 5.9, 8.23]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "16 • Guard silver bar",
+			"from": [-4.4, 5.3, 7.05],
+			"to": [5.35, 6.35, 9.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.475, 5.825, 8.15]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "17 • Guard left finial",
+			"from": [-5.55, 5.8, 7.36],
+			"to": [-3.97, 8.2, 8.95],
+			"rotation": {"angle": 45, "axis": "z", "origin": [-4.76, 7, 8.155]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "18 • Guard right finial",
+			"from": [4.75, 5.8, 7.36],
+			"to": [6.15, 8.2, 8.95],
+			"rotation": {"angle": -45, "axis": "z", "origin": [5.45, 7, 8.155]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "19 • Central crescent plaque",
+			"from": [-1.3, 5.65, 6.28],
+			"to": [2.8, 7.1, 6.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.75, 6.375, 6.39]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "20 • Guard astral jewel",
+			"from": [0.3, 5.71, 6.04],
+			"to": [1.46, 6.83, 6.3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.88, 6.27, 6.17]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "21 • Guard jewel glint",
+			"from": [0.7, 6.27, 5.9],
+			"to": [1.05, 6.62, 6.06],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 6.445, 5.98]},
+			"faces": {
+				"north": {"uv": [14, 4, 16, 6], "texture": "#0"},
+				"east": {"uv": [12, 10, 14, 12], "texture": "#0"},
+				"south": {"uv": [14, 4, 16, 6], "texture": "#0"},
+				"west": {"uv": [12, 10, 14, 12], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "22 • Upper void socket",
+			"from": [-1.8, 19.05, 6.62],
+			"to": [3.37, 24.2, 9.99],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.785, 21.625, 8.305]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "23 • Socket left trim",
+			"from": [-2.3, 19.45, 6.4],
+			"to": [-1.22, 24.72, 10.12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1.76, 22.085, 8.26]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "24 • Socket right trim",
+			"from": [2.8, 20.1, 6.4],
+			"to": [4.2, 23.75, 10.18],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3.5, 21.925, 8.29]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "25 • Socket upper silver",
+			"from": [-1.67, 23.3, 6.3],
+			"to": [4.36, 24.56, 10.23],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1.345, 23.93, 8.265]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "26 • Socket anchor prism",
+			"from": [-0.76, 18, 6],
+			"to": [2.41, 22.45, 6.48],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.825, 20.225, 6.24]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "27 • Moon heart core",
+			"from": [-0.1, 19.1, 5.78],
+			"to": [1.68, 21.1, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.79, 20.1, 5.89]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "28 • Moon heart inner glow",
+			"from": [0.37, 19.58, 5.58],
+			"to": [1.2, 20.53, 5.8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.785, 20.055, 5.69]},
+			"faces": {
+				"north": {"uv": [12, 0, 14, 2], "texture": "#0"},
+				"east": {"uv": [0, 4, 2, 6], "texture": "#0"},
+				"south": {"uv": [12, 0, 14, 2], "texture": "#0"},
+				"west": {"uv": [0, 4, 2, 6], "texture": "#0"},
+				"up": {"uv": [4, 4, 6, 6], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "29 • Moon heart forehead glint",
+			"from": [0.59, 20.31, 5.48],
+			"to": [0.96, 20.63, 5.61],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.775, 20.47, 5.545]},
+			"faces": {
+				"north": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"south": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"west": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"up": {"uv": [4, 4, 6, 6], "texture": "#0"},
+				"down": {"uv": [6, 2, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "30 • Upper spine ornate spike",
+			"from": [0.04, 24.08, 7.17],
+			"to": [1.86, 27.18, 9.45],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.95, 25.63, 8.31]},
+			"faces": {
+				"north": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [12, 6, 14, 8], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "31 • Silver spike rune",
+			"from": [0.72, 25.15, 6.98],
+			"to": [1.18, 26.34, 7.2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.95, 25.745, 7.09]},
+			"faces": {
+				"north": {"uv": [14, 4, 16, 6], "texture": "#0"},
+				"east": {"uv": [12, 10, 14, 12], "texture": "#0"},
+				"south": {"uv": [14, 4, 16, 6], "texture": "#0"},
+				"west": {"uv": [12, 10, 14, 12], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "32 • Root crescent backwards guard",
+			"from": [-4.8, 22.7, 7.19],
+			"to": [-1.92, 24.12, 9.6],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [-3.36, 23.41, 8.395]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "33 • Tail crescent backwards guard",
+			"from": [-5.98, 24.2, 7.56],
+			"to": [-4.35, 26.38, 9.34],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [-5.165, 25.29, 8.45]},
+			"faces": {
+				"north": {"uv": [10, 0, 12, 2], "texture": "#0"},
+				"east": {"uv": [12, 4, 14, 6], "texture": "#0"},
+				"south": {"uv": [10, 2, 12, 4], "texture": "#0"},
+				"west": {"uv": [12, 4, 14, 6], "texture": "#0"},
+				"up": {"uv": [12, 0, 14, 2], "texture": "#0"},
+				"down": {"uv": [6, 2, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "41 • Blade root sapphire accent",
+			"from": [3.47, 22, 6.11],
+			"to": [5.06, 23.25, 6.4],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4.265, 22.625, 6.255]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "45 • Socket rivet 01",
+			"from": [-1.25, 21.55, 6.13],
+			"to": [-0.79, 22.01, 6.39],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-1.02, 21.78, 6.26]},
+			"faces": {
+				"north": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"south": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"west": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"up": {"uv": [4, 4, 6, 6], "texture": "#0"},
+				"down": {"uv": [6, 2, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "45 • Socket rivet 02",
+			"from": [2.65, 21.55, 6.13],
+			"to": [3.11, 22.01, 6.39],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2.88, 21.78, 6.26]},
+			"faces": {
+				"north": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"east": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"south": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"west": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"up": {"uv": [4, 4, 6, 6], "texture": "#0"},
+				"down": {"uv": [6, 2, 8, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "34 • Forged crescent plate 01 — Root",
+			"from": [2.8, 21.9, 7.63],
+			"to": [10.4, 24.35, 9.15],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [6.6, 23.125, 8.39]},
+			"faces": {
+				"north": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 12, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "34 • Forged crescent plate 02 — Proximal",
+			"from": [8.7, 20, 7.63],
+			"to": [16.9, 22.25, 9.17],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [12.8, 21.125, 8.4]},
+			"faces": {
+				"north": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 12, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "34 • Forged crescent plate 03 — Sweep",
+			"from": [14.9, 16.55, 7.61],
+			"to": [21.8, 18.95, 9.13],
+			"rotation": {"angle": -45, "axis": "z", "origin": [18.35, 17.75, 8.37]},
+			"faces": {
+				"north": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 12, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "34 • Forged crescent plate 04 — Outer hook",
+			"from": [20.05, 13.95, 7.61],
+			"to": [24.65, 16.15, 9.05],
+			"rotation": {"angle": -45, "axis": "z", "origin": [22.35, 15.05, 8.33]},
+			"faces": {
+				"north": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 12, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "34 • Forged crescent plate 05 — Lunar talon",
+			"from": [22.55, 11.55, 7.65],
+			"to": [25.15, 13.55, 8.87],
+			"rotation": {"angle": -45, "axis": "z", "origin": [23.85, 12.55, 8.26]},
+			"faces": {
+				"north": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"east": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"south": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"west": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"up": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"down": {"uv": [10, 4, 12, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "35 • Layered moonsteel face 01 — Root",
+			"from": [3, 22.02, 7.39],
+			"to": [10.24, 24.13, 7.65],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [6.62, 23.075, 7.52]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "37 • Midnight veins 01 — Root",
+			"from": [3.4, 23.75, 7.33],
+			"to": [9.75, 24.01, 7.47],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [6.575, 23.88, 7.4]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"east": {"uv": [2, 12, 4, 14], "texture": "#0"},
+				"south": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"west": {"uv": [14, 8, 16, 10], "texture": "#0"},
+				"up": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "35 • Layered moonsteel face 02 — Proximal",
+			"from": [8.9, 20.12, 7.39],
+			"to": [16.74, 22.03, 7.65],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [12.82, 21.075, 7.52]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "37 • Midnight veins 02 — Proximal",
+			"from": [9.3, 21.65, 7.33],
+			"to": [16.25, 21.91, 7.47],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [12.775, 21.78, 7.4]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"east": {"uv": [2, 12, 4, 14], "texture": "#0"},
+				"south": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"west": {"uv": [14, 8, 16, 10], "texture": "#0"},
+				"up": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "35 • Layered moonsteel face 03 — Sweep",
+			"from": [15.1, 16.67, 7.37],
+			"to": [21.64, 18.73, 7.63],
+			"rotation": {"angle": -45, "axis": "z", "origin": [18.37, 17.7, 7.5]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "37 • Midnight veins 03 — Sweep",
+			"from": [15.5, 18.35, 7.31],
+			"to": [21.15, 18.61, 7.45],
+			"rotation": {"angle": -45, "axis": "z", "origin": [18.325, 18.48, 7.38]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"east": {"uv": [2, 12, 4, 14], "texture": "#0"},
+				"south": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"west": {"uv": [14, 8, 16, 10], "texture": "#0"},
+				"up": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "35 • Layered moonsteel face 04 — Outer hook",
+			"from": [20.25, 14.07, 7.37],
+			"to": [24.49, 15.93, 7.63],
+			"rotation": {"angle": -45, "axis": "z", "origin": [22.37, 15, 7.5]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "37 • Midnight veins 04 — Outer hook",
+			"from": [20.65, 15.55, 7.31],
+			"to": [24, 15.81, 7.45],
+			"rotation": {"angle": -45, "axis": "z", "origin": [22.325, 15.68, 7.38]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"east": {"uv": [2, 12, 4, 14], "texture": "#0"},
+				"south": {"uv": [2, 0, 4, 2], "texture": "#0"},
+				"west": {"uv": [14, 8, 16, 10], "texture": "#0"},
+				"up": {"uv": [14, 2, 16, 4], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "35 • Layered moonsteel face 05 — Lunar talon",
+			"from": [22.75, 11.67, 7.41],
+			"to": [24.99, 13.33, 7.67],
+			"rotation": {"angle": -45, "axis": "z", "origin": [23.87, 12.5, 7.54]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "36 • Frost luminous lip 01 — Root",
+			"from": [3.08, 21.62, 7.29],
+			"to": [10.2, 22.14, 7.49],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [6.64, 21.88, 7.39]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "36 • Frost luminous lip 02 — Proximal",
+			"from": [8.98, 19.72, 7.29],
+			"to": [16.7, 20.24, 7.49],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [12.84, 19.98, 7.39]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "36 • Frost luminous lip 03 — Sweep",
+			"from": [15.18, 16.27, 7.27],
+			"to": [21.6, 16.79, 7.47],
+			"rotation": {"angle": -45, "axis": "z", "origin": [18.39, 16.53, 7.37]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "36 • Frost luminous lip 04 — Outer hook",
+			"from": [20.33, 13.67, 7.27],
+			"to": [24.45, 14.19, 7.47],
+			"rotation": {"angle": -45, "axis": "z", "origin": [22.39, 13.93, 7.37]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "36 • Frost luminous lip 05 — Lunar talon",
+			"from": [22.83, 11.27, 7.31],
+			"to": [24.95, 11.79, 7.51],
+			"rotation": {"angle": -45, "axis": "z", "origin": [23.89, 11.53, 7.41]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "38 • Cold silver crescent at root",
+			"from": [3.2, 22.05, 7.03],
+			"to": [6.9, 22.58, 7.31],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [5.05, 22.315, 7.17]},
+			"faces": {
+				"north": {"uv": [8, 0, 10, 2], "texture": "#0"},
+				"east": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"south": {"uv": [8, 6, 10, 8], "texture": "#0"},
+				"west": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"up": {"uv": [8, 2, 10, 4], "texture": "#0"},
+				"down": {"uv": [6, 0, 8, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "40 • Moon talon final glint",
+			"from": [23.95, 10.42, 7.35],
+			"to": [25.62, 11.85, 7.63],
+			"rotation": {"angle": -45, "axis": "z", "origin": [24.785, 11.135, 7.49]},
+			"faces": {
+				"north": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"east": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"south": {"uv": [6, 8, 8, 10], "texture": "#0"},
+				"west": {"uv": [12, 2, 14, 4], "texture": "#0"},
+				"up": {"uv": [12, 8, 14, 10], "texture": "#0"},
+				"down": {"uv": [10, 2, 12, 4], "texture": "#0"}
+			}
+		},
+		{
+			"name": "44 • Rear moonlight veneer 01",
+			"from": [3.12, 22.1, 9.13],
+			"to": [10.04, 24.07, 9.25],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [6.58, 23.085, 9.19]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "44 • Rear moonlight veneer 02",
+			"from": [9.02, 20.2, 9.15],
+			"to": [16.54, 21.97, 9.27],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [12.78, 21.085, 9.21]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "44 • Rear moonlight veneer 03",
+			"from": [15.22, 16.75, 9.11],
+			"to": [21.44, 18.67, 9.23],
+			"rotation": {"angle": -45, "axis": "z", "origin": [18.33, 17.71, 9.17]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "44 • Rear moonlight veneer 04",
+			"from": [20.37, 14.15, 9.03],
+			"to": [24.29, 15.87, 9.15],
+			"rotation": {"angle": -45, "axis": "z", "origin": [22.33, 15.01, 9.09]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		},
+		{
+			"name": "44 • Rear moonlight veneer 05",
+			"from": [22.87, 11.75, 8.85],
+			"to": [24.79, 13.27, 8.97],
+			"rotation": {"angle": -45, "axis": "z", "origin": [23.83, 12.51, 8.91]},
+			"faces": {
+				"north": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"south": {"uv": [10, 4, 12, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"up": {"uv": [6, 2, 8, 4], "texture": "#0"},
+				"down": {"uv": [2, 12, 4, 14], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-4.34, 86.83, 19.11],
+			"translation": [-0.25, 16, -1.5],
+			"scale": [1, 1, 0.6]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-53.29, 58.08, -21.59],
+			"translation": [-3.75, 3.5, 5.25],
+			"scale": [1, 1, 0.6]
+		},
+		"firstperson_righthand": {
+			"rotation": [165.75, 80.5, -180],
+			"translation": [-1.75, 3, -3.25],
+			"scale": [0.75, 0.75, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [32.32, 76.47, 176.53],
+			"translation": [-0.75, 3, 0],
+			"scale": [0.76, 0.76, 0.76]
+		},
+		"ground": {
+			"rotation": [91.61, 11.99, 11.64],
+			"translation": [0, 2.5, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"gui": {
+			"rotation": [-173.39, 2.94, 153.82],
+			"translation": [-1, -1, 0],
+			"scale": [0.39, 0.39, 0.39]
+		},
+		"head": {
+			"rotation": [146, 83.5, -180],
+			"translation": [-0.5, 10.75, -12],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"fixed": {
+			"rotation": [0, 0, 51.25],
+			"scale": [0.54, 0.54, 0.54]
+		}
+	},
+	"groups": [
+		{
+			"name": "01 / Moonsteel Staff",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5]
+		},
+		{
+			"name": "02 / Grip + Pommel",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 1,
+			"children": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+		},
+		{
+			"name": "03 / Handguard + Core",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 2,
+			"children": [21, 22, 23, 24, 25, 26, 27]
+		},
+		{
+			"name": "04 / The Luminous Socket",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 3,
+			"children": [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42]
+		},
+		{
+			"name": "05 / Blade — Crescent Spine",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 4,
+			"children": [43, 44, 45, 46, 47]
+		},
+		{
+			"name": "06 / Blade — Moonlight Face",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 5,
+			"children": [48, 49, 50, 51, 52, 53, 54, 55, 56]
+		},
+		{
+			"name": "07 / Blade — Shimmering Edge",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 6,
+			"children": [57, 58, 59, 60, 61, 62, 63]
+		},
+		{
+			"name": "08 / Rear Facets",
+			"origin": [0, 0, 0],
+			"scope": 0,
+			"color": 7,
+			"children": [64, 65, 66, 67, 68]
+		}
+	]
+}

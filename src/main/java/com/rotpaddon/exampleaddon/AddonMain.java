@@ -7,10 +7,14 @@ import com.rotpaddon.exampleaddon.init.InitEntities;
 import com.rotpaddon.exampleaddon.init.InitParticles;
 import com.rotpaddon.exampleaddon.init.InitSounds;
 import com.rotpaddon.exampleaddon.init.InitStands;
+import com.rotpaddon.exampleaddon.init.InitItems;
 
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import com.rotpaddon.exampleaddon.network.AlcorNetwork;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 // Your addon's main file
 
@@ -23,6 +27,7 @@ public class AddonMain {
 
     public AddonMain() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        modEventBus.addListener(this::onCommonSetup);
 
         // All DeferredRegister objects are registered here.
         // A DeferredRegister needs to be created for each type of objects that need to be registered in the game 
@@ -32,5 +37,9 @@ public class AddonMain {
         InitSounds.SOUNDS.register(modEventBus);
         InitStands.ACTIONS.register(modEventBus);
         InitStands.STANDS.register(modEventBus);
+        InitItems.ITEMS.register(modEventBus);
+    }
+    private void onCommonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(AlcorNetwork::register);
     }
 }
