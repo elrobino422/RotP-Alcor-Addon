@@ -41,13 +41,23 @@ The meter is rendered as its own addon overlay alongside the RotP bars.
 | `AlcorNetwork` | Registered Forge packet channel, protocol 2 |
 | `BlueNightInsomniaHud` | Small addon HUD that reads RotP's existing bar position setting |
 
+## Insomnia gameplay — first consumption pass
+
+- **Normal Moon Reaper hit:** +1 Insomnia (existing behavior)
+- **Reap of Insomnia:** -10 Insomnia per cast (whether or not any mobs are hit)
+- **Below 10 stacks:** Reap is blocked; action condition displays a warning
+- **At 100/100:** Reap drops the HUD to 90/100 immediately
+- Reap no longer replenishes Insomnia when hitting mobs. That previously kept the meter from decreasing.
+- All spending checks and state mutation happen on the server; the client checks its latest synchronized HUD value to avoid misleading attempts.
+- This cost is provisional and can be tuned after in-game testing.
+
 ## In-game test checklist
 
 1. In IntelliJ, checkout branch `feature/blue-night-insomnia-hud` and run `runClient`.
 2. In RotP settings -> HUD, set **Bars position: Left**. Summon Blue Night. The compact moon bar should appear alongside RotP's vertical bars.
 3. Change **Bars position: Right** and return to game. The Insomnia meter should move to the opposite side, **without restarting Minecraft**.
 4. Try **Top Left** and **Top Right** for the horizontal bar layouts.
-5. Hit an enemy with Moon Reaper and cast Reap: the small meter should fill; at 100/100 its moon brightens.
+5. Hit an enemy 10 times with normal Moon Reaper attacks (+1 stack/hit) to reach at least 10. Before 10 stacks, the Reap ability must be blocked with a warning. At 10, casting Reap must immediately reduce the counter to 0. At 100, it must reduce to 90. Reap no longer grants Insomnia from skill hits.
 6. Switch to Bracelet: the bar should remain. Unsummon Blue Night or change Stand: the bar should hide.
 7. Press F1: the Insomnia bar should hide with the rest of the HUD.
 8. Test UI scale changes and, if available, dedicated multiplayer.
