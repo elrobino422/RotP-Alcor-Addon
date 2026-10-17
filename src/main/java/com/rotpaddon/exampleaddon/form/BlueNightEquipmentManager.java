@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 )
 public final class BlueNightEquipmentManager {
 
-    private static final String MANIFESTED_TAG =
+    public static final String MANIFESTED_TAG =
             "AlcorBlueNightManifested";
 
     private BlueNightEquipmentManager() {}

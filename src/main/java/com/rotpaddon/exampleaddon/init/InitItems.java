@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import com.rotpaddon.exampleaddon.item.BlueNightScytheItem;
 
 public class InitItems {
 
@@ -16,10 +17,12 @@ public class InitItems {
                     AddonMain.MOD_ID
             );
 
+
     public static final RegistryObject<Item> BLUE_NIGHT_SCYTHE =
             ITEMS.register("blue_night_scythe",
-                    () -> new Item(
+                    () -> new BlueNightScytheItem(
                             new Item.Properties()
                                     .stacksTo(1)
                     ));
+
 }
