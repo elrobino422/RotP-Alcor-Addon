@@ -2,7 +2,7 @@ package com.rotpaddon.exampleaddon.form;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.util.text.StringTextComponent;
+import com.rotpaddon.exampleaddon.network.AlcorNetwork;
 
 /**
  * Small server-side resource store shared by Blue Night's weapon forms.
@@ -31,8 +31,8 @@ public final class BlueNightInsomnia {
         int next = Math.min(MAX_STACKS, previous + amount);
         if (next != previous) {
             player.getPersistentData().putInt(NBT_KEY, next);
-            player.displayClientMessage(new StringTextComponent(
-                    "Blue Night | Insomnia: " + next + "/" + MAX_STACKS), true);
+            // Keep the HUD in sync immediately; no repeated actionbar spam.
+            AlcorNetwork.syncInsomnia(player, next);
         }
         return next;
     }
