@@ -141,5 +141,14 @@
     "sounds": [
       "rotpalcoraddon:sbh_ultimate_sfx"
     ]
+  },
+  "blue_night_reap_of_insomnia": {
+    "sounds": [
+      {
+        "name": "rotpalcoraddon:blue_night_reap_of_insomnia",
+        "volume": 0.95,
+        "pitch": 1
+      }
+    ]
   }
 }

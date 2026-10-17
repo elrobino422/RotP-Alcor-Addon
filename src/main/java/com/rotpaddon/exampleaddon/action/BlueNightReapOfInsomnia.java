@@ -7,6 +7,8 @@ import com.github.standobyte.jojo.entity.stand.StandEntity;
 import com.github.standobyte.jojo.power.impl.stand.IStandPower;
 import com.rotpaddon.exampleaddon.form.BlueNightEquipmentManager;
 import com.rotpaddon.exampleaddon.form.BlueNightInsomnia;
+import com.rotpaddon.exampleaddon.effect.BlueNightReapFx;
+import com.rotpaddon.exampleaddon.init.InitSounds;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,7 +18,7 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -71,6 +73,12 @@ public class BlueNightReapOfInsomnia extends StandAction {
 
         ServerWorld serverWorld = (ServerWorld) world;
         ServerPlayerEntity player = (ServerPlayerEntity) user;
+
+        // Plays Minecraft's synced main-hand weapon swing for the wielder and
+        // all other nearby players. The separate arc is animated over 8 ticks.
+        player.swing(Hand.MAIN_HAND);
+        BlueNightReapFx.start(serverWorld, player);
+
         Vector3d look = player.getLookAngle();
         double horizontalLookLength = Math.sqrt(look.x * look.x + look.z * look.z);
         int hitCount = 0;
@@ -113,8 +121,8 @@ public class BlueNightReapOfInsomnia extends StandAction {
 
         serverWorld.playSound(
                 null, player.getX(), player.getY(), player.getZ(),
-                SoundEvents.PLAYER_ATTACK_SWEEP, SoundCategory.PLAYERS,
-                1.0F, 0.65F);
+                InitSounds.BLUE_NIGHT_REAP_OF_INSOMNIA_SFX.get(), SoundCategory.PLAYERS,
+                1.0F, 1.0F);
 
         if (hitCount > 0) {
             BlueNightInsomnia.add(player, hitCount * INSOMNIA_PER_REAP_HIT);
