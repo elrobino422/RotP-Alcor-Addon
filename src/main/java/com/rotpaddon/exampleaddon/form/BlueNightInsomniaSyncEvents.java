@@ -61,6 +61,16 @@ public final class BlueNightInsomniaSyncEvents {
     }
 
     @SubscribeEvent
+    public static void onRespawn(PlayerEvent.PlayerRespawnEvent event) {
+        LAST_SENT.remove(event.getPlayer().getUUID());
+    }
+
+    @SubscribeEvent
+    public static void onDimensionChange(PlayerEvent.PlayerChangedDimensionEvent event) {
+        LAST_SENT.remove(event.getPlayer().getUUID());
+    }
+
+    @SubscribeEvent
     public static void onLogout(PlayerEvent.PlayerLoggedOutEvent event) {
         LAST_SENT.remove(event.getPlayer().getUUID());
     }
