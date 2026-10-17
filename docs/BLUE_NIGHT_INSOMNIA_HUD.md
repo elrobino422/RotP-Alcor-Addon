@@ -1,41 +1,61 @@
 # Blue Night — Milestone 3F: Insomnia HUD
 
-## What's new
+## Updated design — follows the RotP Bars position button
 
-A compact moon-themed overlay in the **top-left** of the screen appears whenever the user has **Blue Night summoned**, regardless of whether the current form is Bracelet or Scythe.
+The earlier 190×46 standalone Blue Night panel was too large and disconnected
+from RotP's native stamina/resolve UI. It has been replaced by a compact
+moon-themed meter drawn directly beside RotP's bar group.
 
-- **INSOMNIA N/100** with a 10-segment blue/cyan resource bar
-- The moon brightens as stacks increase and sparkles at 100/100
-- Filled segments animate smoothly rather than jumping instantly
-- F1 / Hide HUD and unsummoning Blue Night hide the display
-- Insomnia gameplay and Reap of Insomnia's damage/cooldown are unchanged
+The addon uses RotP's **public**
+`ClientModSettings.getSettingsReadOnly().barsPosition` value:
 
-## Java architecture (read this to learn how it works!)
+| RotP setting | Insomnia placement |
+| --- | --- |
+| **Bars position: Left** | Slim 8×100 vertical Insomnia bar next to RotP's vertical bars on the left |
+| **Bars position: Right** | Same slim bar mirrored to the right |
+| **Bars position: Top Left** | Small horizontal meter beside the horizontal RotP bars |
+| **Bars position: Top Right** | Same small meter mirrored on the right |
+
+Changing that setting in RotP's own HUD options immediately repositions
+Insomnia without changing an addon config file. No separate 190-pixel panel.
+
+**Important technical distinction:** RotP does not expose an API for
+registering additional meter types directly in its internal BarsRenderer.
+This addon mirrors the built-in UI's layout and follows the **same position
+setting**, without modifying RotP core classes or using fragile reflection.
+The meter is rendered as its own addon overlay alongside the RotP bars.
+
+- Small waxing moon icon as the meter fills
+- Blue → cyan → icy white fill, numeric amount below/near the bar
+- Active for Blue Night in Bracelet **or** Scythe form
+- F1 hides it with the rest of RotP/Minecraft's HUD
+- Original Reap damage, cooldown, particles and Insomnia gains unchanged
+
+## Networking and Java architecture
 
 | Class | Responsibility |
 | --- | --- |
-| `BlueNightInsomnia` | Server-owned persistent NBT counter; sends a snapshot immediately after gains |
-| `BlueNightInsomniaSyncEvents` | Sync on summon/login/respawn/dimension change and 5-second fallback heartbeat |
-| `BlueNightInsomniaSyncPacket` | One-way network packet; updates ONLY the HUD on the client |
-| `AlcorNetwork` | Registers packet ID 1 in the addon's Forge channel (protocol 2) |
-| `BlueNightInsomniaHud` | Draws a client-only overlay on `RenderGameOverlayEvent.Post / ElementType.ALL` |
+| `BlueNightInsomnia` | Server NBT; publishes Insomnia changes |
+| `BlueNightInsomniaSyncEvents` | Resync on summon, respawn, dimension change and heartbeat |
+| `BlueNightInsomniaSyncPacket` | Server-to-client value snapshot |
+| `AlcorNetwork` | Registered Forge packet channel, protocol 2 |
+| `BlueNightInsomniaHud` | Small addon HUD that reads RotP's existing bar position setting |
 
-**Security/design:** The client never tells the server how much Insomnia it has. Attacks and the counter stay server-authoritative. No custom textures are necessary — the HUD is drawn using native `AbstractGui.fill` operations.
+## In-game test checklist
 
-## Test checklist
+1. In IntelliJ, checkout branch `feature/blue-night-insomnia-hud` and run `runClient`.
+2. In RotP settings -> HUD, set **Bars position: Left**. Summon Blue Night. The compact moon bar should appear alongside RotP's vertical bars.
+3. Change **Bars position: Right** and return to game. The Insomnia meter should move to the opposite side, **without restarting Minecraft**.
+4. Try **Top Left** and **Top Right** for the horizontal bar layouts.
+5. Hit an enemy with Moon Reaper and cast Reap: the small meter should fill; at 100/100 its moon brightens.
+6. Switch to Bracelet: the bar should remain. Unsummon Blue Night or change Stand: the bar should hide.
+7. Press F1: the Insomnia bar should hide with the rest of the HUD.
+8. Test UI scale changes and, if available, dedicated multiplayer.
 
-1. Checkout branch `feature/blue-night-insomnia-hud` in IntelliJ, then `runClient`.
-2. Summon Blue Night in Bracelet form: the panel should appear in the upper left with the current server value (0/100 if fresh).
-3. Select Scythe, hit a mob, and cast Reap of Insomnia: numeric and segmented values should grow together. A full meter should glow.
-4. Return to Bracelet: HUD **stays** because Blue Night remains active. Unsummon or change Stand: HUD disappears.
-5. Press F1 to hide the vanilla HUD; Insomnia display also disappears.
-6. Log out and rejoin: the HUD should refresh from the server when Blue Night is summoned again.
-7. If using multiplayer, install **the same updated addon version on both server and client** (the addon channel protocol changed to 2); confirm each player sees their own counter.
-8. Test dimension travel and respawn for stale HUD values.
+## Testing / scope
 
-## Known scope limits
-
-- This is HUD display only: it does not spend Insomnia, alter Reap damage, grant new weapon forms or add a configurable position.
-- A bar at 0/100 is intentional so the player learns the resource exists.
-- Requires Minecraft/Forge 1.16.5 with the existing RotP addon dependencies.
-- Compile and in-game testing must be completed before merging.
+- The new layout is untested in the Minecraft runtime, so test before merging.
+- Server and client must both use the new addon build (network protocol 2).
+- Insomnia is still a resource display only; no spending mechanics yet.
+- The additive bar's footprint matches RotP's known 1.16.5 bar sizes;
+  minor pixel-spacing adjustments can be made after an in-game screenshot.
