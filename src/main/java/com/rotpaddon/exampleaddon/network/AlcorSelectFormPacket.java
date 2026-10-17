@@ -8,6 +8,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkEvent;
+import com.rotpaddon.exampleaddon.form.BlueNightEquipmentManager;
 
 import java.util.function.Supplier;
 
@@ -42,9 +43,29 @@ public class AlcorSelectFormPacket {
             if (standId == null || !AlcorFormRegistry.isAllowed(
                     standId, packet.requestedId, power.getResolveLevel())) return;
 
-            ((IAlcorFormHolder) power.getStandManifestation())
-                    .alcorSetForm(packet.requestedId);
+
+            IAlcorFormHolder holder =
+                    (IAlcorFormHolder) power.getStandManifestation();
+
+            if (AlcorFormRegistry.BLUE_NIGHT.equals(standId)) {
+
+                BlueNightEquipmentManager.selectForm(
+                        player,
+                        holder,
+                        packet.requestedId
+                );
+
+            }
+            else {
+                // Other Stands, such as Fortunate Son,
+                // can use their own form-specific behavior later.
+                holder.alcorSetForm(packet.requestedId);
+            }
+
+
+
         });
         context.setPacketHandled(true);
+
     }
 }

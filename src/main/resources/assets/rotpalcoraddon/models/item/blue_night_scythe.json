@@ -3,8 +3,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "rotpalcoraddon:entity/blue_night_scythe",
-		"particle": "rotpalcoraddon:entity/blue_night_scythe"
+		"0": "rotpalcoraddon:item/blue_night_scythe",
+		"particle": "rotpalcoraddon:item/blue_night_scythe"
 	},
 	"elements": [
 		{
