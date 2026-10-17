@@ -49,6 +49,14 @@ public final class BlueNightInsomniaHud {
 
     private BlueNightInsomniaHud() {}
 
+    /**
+     * HUD's last server-synced resource amount. Used for client-side
+     * skill availability; the server still validates and pays the cost.
+     */
+    public static boolean hasAtLeast(int amount) {
+        return serverStacks >= amount;
+    }
+
     /** Client-side cache, updated only from the server's Insomnia packet. */
     public static void receive(int stacks) {
         serverStacks = Math.max(0, Math.min(BlueNightInsomnia.MAX_STACKS, stacks));
