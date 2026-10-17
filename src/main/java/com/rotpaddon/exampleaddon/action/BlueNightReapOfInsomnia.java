@@ -9,6 +9,7 @@ import com.rotpaddon.exampleaddon.form.BlueNightEquipmentManager;
 import com.rotpaddon.exampleaddon.form.BlueNightInsomnia;
 import com.rotpaddon.exampleaddon.effect.BlueNightReapFx;
 import com.rotpaddon.exampleaddon.init.InitSounds;
+import com.rotpaddon.exampleaddon.client.gui.BlueNightInsomniaHud;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,6 +24,8 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DistExecutor;
 
 /**
  * RotP right-click hotbar ability for Blue Night's Moon Reaper.
@@ -36,7 +39,7 @@ public class BlueNightReapOfInsomnia extends StandAction {
     private static final double REAP_HALF_ANGLE_COS = 0.42D;
     private static final float REAP_DAMAGE = 6.0F;
     private static final int REAP_SLOWNESS_TICKS = 60;
-    private static final int INSOMNIA_PER_REAP_HIT = 3;
+    public static final int INSOMNIA_COST = 10; // Prototype cost, adjust after testing.
 
     public BlueNightReapOfInsomnia(StandAction.Builder builder) {
         super(builder);
@@ -57,6 +60,26 @@ public class BlueNightReapOfInsomnia extends StandAction {
                     new TranslationTextComponent(
                             "message.rotpalcoraddon.blue_night.requires_moon_reaper"));
         }
+        boolean canAfford;
+        if (user.level.isClientSide()) {
+            // Client prediction uses the synced HUD value, not unsynced
+            // player NBT. The server independently verifies the cost.
+            Boolean clientHasEnough = DistExecutor.unsafeCallWhenOn(
+                    Dist.CLIENT,
+                    () -> () -> BlueNightInsomniaHud.hasAtLeast(INSOMNIA_COST));
+            canAfford = Boolean.TRUE.equals(clientHasEnough);
+        }
+        else {
+            canAfford = user instanceof PlayerEntity
+                    && BlueNightInsomnia.get((PlayerEntity) user) >= INSOMNIA_COST;
+        }
+
+        if (!canAfford) {
+            return ActionConditionResult.createNegative(
+                    new TranslationTextComponent(
+                            "message.rotpalcoraddon.blue_night.insufficient_insomnia",
+                            INSOMNIA_COST));
+        }
         return ActionConditionResult.POSITIVE;
     }
 
@@ -73,6 +96,16 @@ public class BlueNightReapOfInsomnia extends StandAction {
 
         ServerWorld serverWorld = (ServerWorld) world;
         ServerPlayerEntity player = (ServerPlayerEntity) user;
+
+        // Spend exactly once per successful cast, even if the sweep misses.
+        // If fewer than 10 stacks remain, do not play FX, sound or damage.
+        if (!BlueNightInsomnia.trySpend(player, INSOMNIA_COST)) {
+            player.displayClientMessage(
+                    new TranslationTextComponent(
+                            "message.rotpalcoraddon.blue_night.insufficient_insomnia",
+                            INSOMNIA_COST), true);
+            return;
+        }
 
         // Plays Minecraft's synced main-hand weapon swing for the wielder and
         // all other nearby players. The separate arc is animated over 8 ticks.
@@ -124,10 +157,9 @@ public class BlueNightReapOfInsomnia extends StandAction {
                 InitSounds.BLUE_NIGHT_REAP_OF_INSOMNIA_SFX.get(), SoundCategory.PLAYERS,
                 1.0F, 1.0F);
 
-        if (hitCount > 0) {
-            BlueNightInsomnia.add(player, hitCount * INSOMNIA_PER_REAP_HIT);
-        }
-        else {
+        // Special attacks now consume Insomnia instead of replenishing it.
+        // Regular Moon Reaper hits remain the source of new stacks.
+        if (hitCount == 0) {
             player.displayClientMessage(
                     new TranslationTextComponent(
                             "message.rotpalcoraddon.blue_night.reap_missed"), true);
