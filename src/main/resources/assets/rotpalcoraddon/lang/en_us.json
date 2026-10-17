@@ -28,5 +28,6 @@
   "action.rotpalcoraddon.blue_night_select_form": "Select Weapon Form",
   "action.rotpalcoraddon.blue_night_reap_of_insomnia": "Reap of Insomnia",
   "message.rotpalcoraddon.blue_night.requires_moon_reaper": "Hold your manifested Moon Reaper in your main hand to use this skill.",
-  "message.rotpalcoraddon.blue_night.reap_missed": "Reap of Insomnia - missed"
+  "message.rotpalcoraddon.blue_night.reap_missed": "Reap of Insomnia - missed",
+  "message.rotpalcoraddon.blue_night.insufficient_insomnia": "Not enough Insomnia! Reap of Insomnia requires %s stacks."
 }
