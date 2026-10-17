@@ -25,6 +25,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.Color;
 import com.github.standobyte.jojo.action.stand.StandAction;
 import com.rotpaddon.exampleaddon.action.AlcorSelectFormAction;
+import com.rotpaddon.exampleaddon.action.BlueNightReapOfInsomnia;
 
 
 
@@ -228,6 +229,15 @@ public class InitStands {
                                     .resolveLevelToUnlock(0)
                                     .cooldown(5, 0)));
 
+    // Weapon-exclusive right-click hotbar skill, only available with
+    // the manifested Moon Reaper equipped in the player's main hand.
+    public static final RegistryObject<StandAction> BLUE_NIGHT_REAP_OF_INSOMNIA =
+            ACTIONS.register("blue_night_reap_of_insomnia",
+                    () -> new BlueNightReapOfInsomnia(
+                            new StandAction.Builder()
+                                    .resolveLevelToUnlock(0)
+                                    .cooldown(100, 0)));
+
     public static final EntityStandRegistryObject<
             EntityStandType<StandStats>,
             StandEntityType<BlueNightStandEntity>> STAND_BLUE_NIGHT =
@@ -247,7 +257,8 @@ public class InitStands {
                                     StandType.StandSurvivalGameplayPool.NON_ARROW)
 
                             .rightClickHotbar(
-                                    BLUE_NIGHT_SELECT_FORM.get()
+                                    BLUE_NIGHT_SELECT_FORM.get(),
+                                    BLUE_NIGHT_REAP_OF_INSOMNIA.get()
                             )
 
                             // Temporary stats — we'll balance later
