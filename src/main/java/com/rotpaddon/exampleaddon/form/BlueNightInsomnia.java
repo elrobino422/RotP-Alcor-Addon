@@ -3,6 +3,8 @@ package com.rotpaddon.exampleaddon.form;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import com.rotpaddon.exampleaddon.network.AlcorNetwork;
+import com.github.standobyte.jojo.power.impl.stand.IStandPower;
+import com.rotpaddon.exampleaddon.init.InitStands;
 
 /**
  * Small server-side resource store shared by Blue Night's weapon forms.
@@ -35,5 +37,36 @@ public final class BlueNightInsomnia {
             AlcorNetwork.syncInsomnia(player, next);
         }
         return next;
+    }
+
+    /**
+     * Spend a fixed number of stacks for a Blue Night Stand skill.
+     *
+     * Returns false without changing data if the player cannot afford it.
+     * This is server-authoritative and reusable for the later weapon forms.
+     * Individual abilities still check their own form and held weapon.
+     */
+    public static boolean trySpend(ServerPlayerEntity player, int amount) {
+        if (amount <= 0 || player.level.isClientSide()) {
+            return false;
+        }
+
+        boolean blueNightActive = IStandPower.getStandPowerOptional(player)
+                .map(power -> power.isActive()
+                        && power.getType() == InitStands.STAND_BLUE_NIGHT.getStandType())
+                .orElse(false);
+        if (!blueNightActive) {
+            return false;
+        }
+
+        int available = get(player);
+        if (available < amount) {
+            return false;
+        }
+
+        int remaining = available - amount;
+        player.getPersistentData().putInt(NBT_KEY, remaining);
+        AlcorNetwork.syncInsomnia(player, remaining);
+        return true;
     }
 }
