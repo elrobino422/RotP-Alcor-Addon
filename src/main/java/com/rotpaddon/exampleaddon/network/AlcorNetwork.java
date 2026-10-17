@@ -11,7 +11,7 @@ import net.minecraftforge.fml.network.simple.SimpleChannel;
 import java.util.Optional;
 
 public final class AlcorNetwork {
-    private static final String PROTOCOL = "1";
+    private static final String PROTOCOL = "2";
 
     private static final SimpleChannel CHANNEL = NetworkRegistry.ChannelBuilder
             .named(new ResourceLocation(AddonMain.MOD_ID, "form_selector"))
